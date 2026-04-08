@@ -1,0 +1,2 @@
+# ignorar archivos y carpetas relacionados con entornos virtuales
+.venv
