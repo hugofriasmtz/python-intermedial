@@ -20,6 +20,8 @@ python_intermedio/
 │   └── retos/
 │       ├── bloque_1/
 │       └── bloque_2/
+├── pandas/
+│   └── README.md
 └── README.md
 ```
 
@@ -33,6 +35,14 @@ Incluye:
 - Preparación de entorno virtual para trabajar de forma aislada.
 - Retos progresivos por bloques.
 - Buenas prácticas de presentación de gráficos.
+
+### Pandas
+
+Incluye:
+
+- Guía inicial sobre qué es Pandas y para qué sirve.
+- Conceptos básicos para comenzar a trabajar con datos tabulares.
+- Base para futuros ejemplos, apuntes y ejercicios.
 
 ## Cómo Empezar
 
@@ -50,6 +60,8 @@ source .venv/bin/activate
 pip install -r matplotlib/requirements.txt
 ```
 
+Si quieres empezar con Pandas, entra a `pandas/` y sigue una estructura similar.
+
 ## Convenciones del Repo
 
 - Organización por módulos (una carpeta por librería o tema).
@@ -59,7 +71,6 @@ pip install -r matplotlib/requirements.txt
 
 ## Próximos Módulos
 
-- Pandas.
 - NumPy.
 - Limpieza y transformación de datos.
 - Mini casos integrando varias librerías.
