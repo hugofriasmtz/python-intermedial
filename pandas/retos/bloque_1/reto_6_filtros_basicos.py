@@ -23,7 +23,10 @@ data = {
 
 df = pd.DataFrame(data, index=["BR", "RU", "IN", "CH", "SA"])
 
-# TODO: filtro population > 200
-# TODO: filtro area < 5
-# TODO: filtro combinado con &
-# TODO: imprime resultados
+# 1: filtro population > 200
+print(df[df["population"] > 200])
+# 2: filtro area < 5
+print(df[df["area"] < 5])
+# 3: filtro combinado con &
+print(df[(df["population"] > 100) & (df["area"] < 10)])
+# 4: imprime resultados

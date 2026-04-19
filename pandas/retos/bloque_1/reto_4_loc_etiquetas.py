@@ -21,7 +21,11 @@ data = {
 
 df = pd.DataFrame(data, index=["BR", "RU", "IN", "CH", "SA"])
 
-# TODO: df.loc[["RU"]]
-# TODO: df.loc[["RU", "IN", "CH"]]
-# TODO: df.loc[:, ["country", "capital"]]
-# TODO: df.loc[["RU", "IN", "CH"], ["country", "capital"]]
+# 1
+print(df.loc[["RU"]])
+# 2
+print(df.loc[["RU", "IN", "CH"]])
+# 3
+print(df.loc[:, ["country", "capital"]])
+# 4
+print(df.loc[["RU", "IN", "CH"], ["country", "capital"]])

@@ -21,7 +21,11 @@ data = {
 
 df = pd.DataFrame(data)
 
-# TODO: revisar nulos con isna()
-# TODO: contar nulos por columna
-# TODO: rellenar nulos en edad
-# TODO: (opcional) eliminar filas con nulos
+# 1: revisar nulos con isna()
+print(df.isna())
+# 2: contar nulos por columna
+print(df.isna().sum())
+# 3: rellenar nulos en edad
+df["edad"].fillna(0, inplace=True)
+# 4: (opcional) eliminar filas con nulos
+df.dropna(inplace=True)

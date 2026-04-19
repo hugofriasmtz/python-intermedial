@@ -21,7 +21,11 @@ data = {
 
 df = pd.DataFrame(data, index=["BR", "RU", "IN", "CH", "SA"])
 
-# TODO: df.iloc[[1]]
-# TODO: df.iloc[[1, 2, 3]]
-# TODO: df.iloc[:, [0, 1]]
-# TODO: df.iloc[[1, 2, 3], [0, 1]]
+# 1
+print(df.iloc[[1]])
+# 2
+print(df.iloc[[1, 2, 3]])
+# 3
+print(df.iloc[:, [0, 1]])
+# 4
+print(df.iloc[[1, 2, 3], [0, 1]])
