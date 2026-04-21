@@ -2,6 +2,8 @@
 
 Matplotlib es una biblioteca de visualización de datos en Python que permite crear gráficos estáticos, animados e interactivos. Es ampliamente utilizada para explorar datos, comunicar resultados y crear visualizaciones personalizadas.
 
+En esta carpeta los ejercicios estan organizados para que primero entiendas el grafico mas simple y luego le vayas agregando detalles. La idea es que cada reto te ayude a recordar la intencion de cada parametro, no solo a copiar sintaxis.
+
 En esta guía verás:
 
 1. Cómo preparar un entorno de trabajo limpio.
@@ -90,6 +92,10 @@ plt.plot(x, y)
 plt.title("Gráfico de Líneas")
 plt.show()
 ```
+
+## Cómo Practicar los Retos
+
+En `retos/` veras archivos con objetivos cortos y comentarios de apoyo. Leelos como una receta: primero mira el objetivo, luego ubica los datos y finalmente completa el codigo en el orden que te piden.
 
 Ejemplo visual del resultado:
 
