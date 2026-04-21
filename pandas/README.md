@@ -2,6 +2,8 @@
 
 Pandas es una biblioteca de análisis de datos en Python. Permite trabajar con tablas de información de forma práctica para explorar, filtrar, limpiar y resumir datos.
 
+La idea de esta carpeta es aprender paso a paso: primero crear y revisar DataFrames, luego seleccionar datos y después combinar filtros y agrupaciones. Cada reto esta pensado para que puedas recordar la logica sin memorizarla a ciegas.
+
 En esta guía verás:
 
 1. Cómo preparar un entorno básico para Pandas.
@@ -139,6 +141,10 @@ Haz estos pasos en orden:
 4. Selecciona dos columnas con `[]`.
 5. Selecciona por etiqueta con `loc`.
 6. Selecciona por posición con `iloc`.
+
+## Cómo Leer los Retos
+
+Los archivos de `retos/` usan comentarios cortos para ayudarte a entender que hace cada linea. La meta no es solo resolver el ejercicio, sino reconocer el patron para poder repetirlo despues sin mirar la solucion.
 
 ## ¿Qué Sigue Después?
 
