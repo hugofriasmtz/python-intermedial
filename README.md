@@ -14,6 +14,12 @@ Actualmente el repositorio está organizado por librería o tema:
 
 ```text
 python_intermedio/
+├── numpy/
+│   ├── README.md
+│   ├── requirements.txt
+│   └── retos/
+│       ├── bloque_1/
+│       └── bloque_2/
 ├── matplotlib/
 │   ├── README.md
 │   ├── requirements.txt
@@ -44,6 +50,14 @@ Incluye:
 - Conceptos básicos para comenzar a trabajar con datos tabulares.
 - Base para futuros ejemplos, apuntes y ejercicios.
 
+### NumPy
+
+Incluye:
+
+- Guía base para entender arreglos, tipos de datos y operaciones vectorizadas.
+- Retos simples para practicar creacion, indexado y operaciones con `ndarray`.
+- Ejercicios progresivos con comentarios para recordar por que se escribe cada linea.
+
 ## Cómo Empezar
 
 1. Clona el repositorio.
@@ -57,10 +71,10 @@ Comandos base:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r matplotlib/requirements.txt
+pip install -r numpy/requirements.txt
 ```
 
-Si quieres empezar con Pandas, entra a `pandas/` y sigue una estructura similar.
+Si quieres empezar con Pandas o Matplotlib, entra a sus carpetas y sigue una estructura similar.
 
 ## Convenciones del Repo
 
@@ -71,7 +85,6 @@ Si quieres empezar con Pandas, entra a `pandas/` y sigue una estructura similar.
 
 ## Próximos Módulos
 
-- NumPy.
 - Limpieza y transformación de datos.
 - Mini casos integrando varias librerías.
 
