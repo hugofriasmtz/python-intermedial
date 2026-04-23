@@ -32,6 +32,30 @@ python -c "import numpy as np; print(np.__version__)"
 
 Los ejercicios de `retos/` estan escritos para que puedas leerlos como ejemplos guiados. Cada uno tiene comentarios que explican que significa cada paso y por que conviene escribirlo de esa forma.
 
+## Operadores Logicos en NumPy
+
+Cuando trabajas con arreglos, usa estas funciones para combinar condiciones elemento por elemento:
+
+1. `np.logical_and(cond1, cond2)` equivale a `and`.
+2. `np.logical_or(cond1, cond2)` equivale a `or`.
+3. `np.logical_not(cond)` equivale a `not`.
+
+Ejemplo rapido:
+
+```python
+import numpy as np
+
+values = np.array([5, 12, 18, 25, 30])
+
+between_10_and_25 = np.logical_and(values >= 10, values <= 25)
+less_than_10_or_greater_25 = np.logical_or(values < 10, values > 25)
+not_between_10_and_25 = np.logical_not(between_10_and_25)
+
+print(values[between_10_and_25])
+print(values[less_than_10_or_greater_25])
+print(values[not_between_10_and_25])
+```
+
 ## Qué Sigue Después
 
 Cuando domines esta carpeta, el siguiente paso natural es combinar NumPy con Pandas para limpiar datos y con Matplotlib para graficarlos.
