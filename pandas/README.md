@@ -1,158 +1,160 @@
-# Guía de Pandas
+# pandas: Introduccion Visual para Principiantes
 
-Pandas es una biblioteca de análisis de datos en Python. Permite trabajar con tablas de información de forma práctica para explorar, filtrar, limpiar y resumir datos.
+![pandas logo](https://pandas.pydata.org/static/img/pandas.svg)
 
-La idea de esta carpeta es aprender paso a paso: primero crear y revisar DataFrames, luego seleccionar datos y después combinar filtros y agrupaciones. Cada reto esta pensado para que puedas recordar la logica sin memorizarla a ciegas.
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-data%20analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Nivel](https://img.shields.io/badge/Nivel-Principiante-0A7E07?style=for-the-badge)
 
-En esta guía verás:
+> De datos sueltos a decisiones claras: esta carpeta te enseña la base de pandas paso a paso.
 
-1. Cómo preparar un entorno básico para Pandas.
-2. Conceptos iniciales que debes dominar antes de seleccionar datos.
-3. Diferencias entre `[]`, `loc` e `iloc`.
-4. Errores comunes y práctica recomendada para nivel inicial.
+---
 
-## Preparando el Entorno
+## Tabla de Contenido
 
-Para empezar, solo necesitas Python y Pandas instalados en un entorno virtual.
+1. [Que es pandas](#que-es-pandas)
+2. [Que puedes lograr con pandas](#que-puedes-lograr-con-pandas)
+3. [Donde se usa en el mundo real](#donde-se-usa-en-el-mundo-real)
+4. [Ruta de aprendizaje de este repo](#ruta-de-aprendizaje-de-este-repo)
+5. [Como ejecutar los retos](#como-ejecutar-los-retos)
+6. [Convencion de nombres de retos](#convencion-de-nombres-de-retos)
+7. [Datos del modulo](#datos-del-modulo)
+8. [Recursos oficiales](#recursos-oficiales)
+9. [Imagenes y creditos](#imagenes-y-creditos)
 
-### 1) Crear y activar entorno virtual
+---
+
+## Que es pandas
+
+pandas es una libreria de Python para trabajar con datos en formato tabular.
+
+Con pandas puedes:
+
+- Explorar informacion rapidamente.
+- Limpiar datos incompletos o inconsistentes.
+- Transformar columnas y formatos.
+- Resumir resultados en minutos.
+- Preparar informacion para reportes y visualizacion.
+
+En palabras simples: pandas te ayuda a convertir tablas desordenadas en respuestas utiles.
+
+---
+
+## Que puedes lograr con pandas
+
+![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
+
+### Analisis de ventas
+
+- Encontrar que ciudad vende mas.
+- Comparar meses buenos y meses bajos.
+- Detectar productos con baja rotacion.
+
+### Analisis de negocio digital
+
+- Medir resultados por canal.
+- Identificar clientes frecuentes.
+- Evaluar tendencias por temporada.
+
+### Analisis en educacion y salud
+
+- Resumir desempeno por grupo.
+- Revisar evolucion en el tiempo.
+- Detectar patrones para mejorar decisiones.
+
+---
+
+## Donde se usa en el mundo real
+
+![pandas mark](https://pandas.pydata.org/static/img/pandas_mark.svg)
+
+pandas se usa en:
+
+- Fintech y banca: monitoreo de transacciones y riesgo.
+- Marketing: analisis de campanas y retorno de inversion.
+- Logistica: seguimiento de rutas, tiempos y costos.
+- Investigacion: limpieza y validacion de datos experimentales.
+- Educacion: reportes academicos y seguimiento estudiantil.
+
+Si tu trabajo involucra tablas o reportes, pandas es una habilidad clave.
+
+---
+
+## Ruta de aprendizaje de este repo
+
+Este modulo esta pensado para avanzar con estructura clara:
+
+1. `retos/bloque_1`: fundamentos (estructura, seleccion, filtros basicos).
+2. `retos/bloque_2`: operaciones intermedias (groupby, merge, pivot, fechas).
+
+Recomendacion de uso:
+
+- Lee primero el README del bloque.
+- Resuelve el reto por tu cuenta.
+- Compara y mejora tu solucion.
+
+---
+
+## Como ejecutar los retos
+
+Desde la raiz del repo:
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate  # En Windows: .venv\Scripts\activate
+source .venv/bin/activate
+pip install -r pandas/requirements.txt
+python pandas/retos/bloque_1/01_dataframe_basico.py
 ```
 
-### 2) Instalar Pandas
+Puedes cambiar el archivo final por cualquier otro reto del bloque 1 o 2.
 
-```bash
-python -m pip install --upgrade pip
-pip install pandas
-```
+---
 
-### 3) Verificar instalación
+## Convencion de nombres de retos
 
-```bash
-python -c "import pandas as pd; print(pd.__version__)"
-```
+Los ejercicios de pandas usan el formato:
 
-> [!TIP]
-> Si tu proyecto crece, guarda dependencias con `pip freeze > requirements.txt`.
+- `01_tema.py`
+- `02_tema.py`
+- `03_tema.py`
 
-## Conceptos Iniciales
+Esto ayuda a mantener orden consistente y facilita ejecutarlos en secuencia.
 
-Antes de escribir consultas, entiende estas bases:
+---
 
-1. `DataFrame`: tabla completa.
-2. `Series`: una columna de la tabla.
-3. `Columna`: variable (por ejemplo, `country`).
-4. `Índice`: identificador de cada fila.
-5. `Fila`: cada registro de datos.
+## Datos del modulo
 
-> [!TIP]
-> Si dominas índice, columnas y filas, `loc` e `iloc` se vuelven mucho más fáciles.
+Si un reto requiere archivos de entrada, puedes colocarlos en:
 
-## Crear tu Primer DataFrame
+- `data/pandas/`
 
-```python
-import pandas as pd
+Asi evitas duplicar datasets en varias carpetas.
 
-data = {
-    "country": ["Brazil", "Russia", "India"],
-    "capital": ["Brasilia", "Moscow", "New Delhi"],
-    "population": [200.4, 143.5, 1252.0]
-}
+---
 
-df = pd.DataFrame(data)
-print(df)
-```
+## Recursos oficiales
 
-## Revisar la Tabla Antes de Seleccionar
+- [Sitio oficial de pandas](https://pandas.pydata.org/)
+- [Documentacion oficial](https://pandas.pydata.org/docs/)
+- [Getting Started](https://pandas.pydata.org/docs/getting_started/index.html)
+- [API Reference](https://pandas.pydata.org/docs/reference/index.html)
+- [Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
 
-Siempre revisa esto primero:
+---
 
-```python
-df.shape      # tamaño: (filas, columnas)
-df.columns    # nombres de columnas
-df.index      # índice de filas
-df.head()     # primeras filas
-```
+## Imagenes y creditos
 
-## Selección Básica con `[]`
+Imagenes usadas por referencia visual de la libreria pandas:
 
-Empieza por aquí:
+- Logo principal: `https://pandas.pydata.org/static/img/pandas.svg`
+- Logo principal (fondo oscuro): `https://pandas.pydata.org/static/img/pandas_white.svg`
+- Logo secundario: `https://pandas.pydata.org/static/img/pandas_secondary.svg`
+- Marca (icono): `https://pandas.pydata.org/static/img/pandas_mark.svg`
 
-```python
-df["country"]
-```
+Fuente de marca y lineamientos:
 
-Devuelve una columna (`Series`).
+- [Citing and logo - pandas](https://github.com/pandas-dev/pandas/blob/main/web/pandas/about/citing.md)
 
-```python
-df[["country", "capital"]]
-```
+---
 
-Devuelve varias columnas (`DataFrame`).
-
-```python
-df[0:2]
-```
-
-Devuelve filas por rango de posición.
-
-## `loc` e `iloc`
-
-Esta es la diferencia más importante en selección de datos.
-
-### `loc` (por etiqueta)
-
-Selecciona por nombre de fila/columna:
-
-```python
-df.loc[:, ["country", "capital"]]
-```
-
-### `iloc` (por posición)
-
-Selecciona por número de fila/columna:
-
-```python
-df.iloc[:, [0, 1]]
-```
-
-## Regla Rápida para Memorizar
-
-- `loc` -> labels (etiquetas)
-- `iloc` -> integer location (posiciones)
-
-## Errores Comunes al Empezar
-
-1. Mezclar etiquetas y posiciones en el mismo método.
-2. No revisar `df.columns` y `df.index` antes de seleccionar.
-3. Pensar que `df["col"]` y `df[["col"]]` son iguales.
-4. Saltar a temas avanzados sin practicar selección básica.
-
-## Mini Práctica Recomendada
-
-Haz estos pasos en orden:
-
-1. Crea un DataFrame simple.
-2. Revisa `head`, `shape`, `columns` e `index`.
-3. Selecciona una columna con `[]`.
-4. Selecciona dos columnas con `[]`.
-5. Selecciona por etiqueta con `loc`.
-6. Selecciona por posición con `iloc`.
-
-## Cómo Leer los Retos
-
-Los archivos de `retos/` usan comentarios cortos para ayudarte a entender que hace cada linea. La meta no es solo resolver el ejercicio, sino reconocer el patron para poder repetirlo despues sin mirar la solucion.
-
-## ¿Qué Sigue Después?
-
-Cuando domines esta parte inicial, continúa con:
-
-- filtros con condiciones,
-- ordenamiento,
-- nulos y duplicados,
-- agrupaciones con `groupby`.
-
-Esta carpeta seguirá creciendo por bloques de práctica.
+**Estado:** En construccion
