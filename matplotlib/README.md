@@ -1,221 +1,143 @@
-# Guía de Matplotlib
+# Matplotlib: introduccion visual
 
-Matplotlib es una biblioteca de visualización de datos en Python que permite crear gráficos estáticos, animados e interactivos. Es ampliamente utilizada para explorar datos, comunicar resultados y crear visualizaciones personalizadas.
+![matplotlib logo](https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg)
 
-En esta carpeta los ejercicios estan organizados para que primero entiendas el grafico mas simple y luego le vayas agregando detalles. La idea es que cada reto te ayude a recordar la intencion de cada parametro, no solo a copiar sintaxis.
+> De una linea simple a una grafica clara y presentable: este modulo te lleva paso a paso por lo esencial de matplotlib.
 
-En esta guía verás:
+---
 
-1. Cómo preparar un entorno de trabajo limpio.
-2. Tipos de gráficos básicos y cuándo usar cada uno.
-3. Personalizaciones esenciales para mejorar la lectura.
+## Tabla de contenido
 
-## Preparando el Entorno
+1. [Que es matplotlib](#que-es-matplotlib)
+2. [Que puedes lograr con matplotlib](#que-puedes-lograr-con-matplotlib)
+3. [Ruta de aprendizaje de este modulo](#ruta-de-aprendizaje-de-este-modulo)
+4. [Como ejecutar los retos](#como-ejecutar-los-retos)
+5. [Convencion de nombres](#convencion-de-nombres)
+6. [Datos del modulo](#datos-del-modulo)
+7. [Recursos oficiales](#recursos-oficiales)
+8. [Estado del modulo](#estado-del-modulo)
 
-Antes de crear gráficos, conviene trabajar en un entorno virtual para no instalar librerías en todo el sistema.
-Esto te ayuda a mantener cada proyecto aislado, ordenado y reproducible.
+---
 
-Buenas prácticas que vamos a seguir:
+## Que es matplotlib
 
-1. Crear una carpeta para el proyecto.
-2. Crear un entorno virtual dentro del proyecto.
-3. Activar el entorno antes de instalar librerías.
-4. Guardar dependencias en un archivo `requirements.txt`.
+matplotlib es la libreria de Python para crear graficas de datos.
 
-### 1) Crear proyecto y entorno virtual
+Con matplotlib puedes:
+
+- Explorar datos rapidamente.
+- Comparar valores entre categorias.
+- Mostrar tendencias en el tiempo.
+- Resaltar hallazgos con anotaciones.
+- Preparar graficas para reportes o presentaciones.
+
+En palabras simples: matplotlib convierte datos en historias visuales.
+
+---
+
+## Que puedes lograr con matplotlib
+
+### Analisis de ventas
+
+- Ver como cambian las ventas por mes.
+- Comparar productos o categorias.
+- Detectar picos y caidas.
+
+### Analisis de comportamiento
+
+- Comparar dos periodos.
+- Encontrar relaciones entre variables.
+- Revisar distribuciones y patrones.
+
+### Presentacion de resultados
+
+- Crear graficas limpias y entendibles.
+- Resaltar un hallazgo importante.
+- Ajustar el diseño para que se vea mejor.
+
+---
+
+## Ruta de aprendizaje de este modulo
+
+Este modulo esta organizado en dos bloques:
+
+1. `retos/bloque_1` - fundamentos de visualizacion.
+2. `retos/bloque_2` - visualizacion intermedia.
+
+### Bloque 1: fundamentos
+
+- Retos 1-2: primeras graficas con lineas y barras.
+- Reto 3: comparacion de dos series con transparencia.
+- Retos 4-5: personalizacion y multiples series.
+- Retos 6-7: histogramas y scatter plots.
+
+### Bloque 2: intermedio
+
+- Retos 1-2: subplots y anotaciones.
+- Reto 3: escala logaritmica.
+- Reto 4: barras agrupadas.
+- Retos 5-7: area apilada, ejes duales y diseño profesional.
+
+---
+
+## Como ejecutar los retos
+
+Desde la raiz de este modulo:
 
 ```bash
-mkdir mi_proyecto_graficos
-cd mi_proyecto_graficos
 python3 -m venv .venv
-source .venv/bin/activate  # En Windows: .venv\Scripts\activate
+source .venv/bin/activate
+pip install -r matplotlib/requirements.txt
+python matplotlib/retos/bloque_1/01_lineas.py
 ```
 
-Si todo salió bien, tu terminal mostrará algo como `(.venv)` al inicio.
+Puedes cambiar el ultimo archivo por cualquiera de los otros retos.
 
-### 2) Instalar Matplotlib en el entorno
+Si estas en Linux y `plt.show()` no abre una ventana, instala soporte grafico con:
 
 ```bash
-python -m pip install --upgrade pip
-pip install matplotlib
+sudo apt install python3-tk
 ```
 
-> [!NOTE]
-> Si usas Linux o WSL2 y `plt.show()` no abre una ventana, probablemente te falta soporte gráfico de Tk/Tkinter.
-> En Ubuntu/Debian puedes instalarlo con:
-> `sudo apt install python3-tk`
-> Si usas Python instalado con pyenv u otra compilación personalizada, podría requerir recompilar Python con soporte Tk.
-> Como alternativa universal, guarda la gráfica en archivo con `plt.savefig("grafico.png")`.
+Tambien puedes guardar la figura con `plt.savefig()` si no quieres abrir ventana.
 
-### 3) Verificar que la librería quedó en el entorno
+---
 
-```bash
-python -c "import matplotlib; print(matplotlib.__version__)"
-which python  # En Windows: where python
-```
+## Convencion de nombres
 
-### 4) Guardar dependencias del proyecto
+Los retos siguen este formato:
 
-```bash
-pip freeze > requirements.txt
-```
+- `01_tema.py`
+- `02_tema.py`
+- `03_tema.py`
 
-Esto permite que otra persona (o tú en el futuro) reconstruya el entorno con:
+Esto ayuda a mantener el orden y a resolverlos en secuencia.
 
-```bash
-pip install -r requirements.txt
-```
+---
 
-### 5) Salir del entorno cuando termines
+## Datos del modulo
 
-```bash
-deactivate
-```
+Si un reto necesita datos de entrada, los encontraras en:
 
-> [!TIP]
-> Agrega `.venv/` a tu archivo `.gitignore` para no subir el entorno al repositorio.
+- `data/matplotlib/`
 
-## Gráfico de Líneas
+Archivo disponible:
 
-El gráfico de líneas conecta puntos consecutivos y permite ver la evolución de una variable a través del tiempo.
+- `ventas_cafeteria.csv` - ventas mensuales de una cafetería por categoria.
 
-> [!TIP]
-> **Cuándo usarla:** cuando los datos siguen una secuencia (tiempo, días, meses, etapas).
-> **Qué te ayuda a ver:** si los valores suben, bajan o se mantienen estables.
-> **Ejemplo típico:** ventas por mes, temperatura por hora, progreso de estudio por semana.
+---
 
-```python
-import matplotlib.pyplot as plt
-x = [1, 2, 3, 4, 5]
-y = [2, 3, 5, 7, 11]
-plt.plot(x, y)
-plt.title("Gráfico de Líneas")
-plt.show()
-```
+## Recursos oficiales
 
-## Cómo Practicar los Retos
+- [Sitio oficial de matplotlib](https://matplotlib.org/)
+- [Galeria de ejemplos](https://matplotlib.org/stable/gallery/index.html)
+- [Documentacion de pyplot](https://matplotlib.org/stable/api/pyplot_summary.html)
+- [Colores nombrados](https://matplotlib.org/stable/gallery/color/named_colors.html)
 
-En `retos/` veras archivos con objetivos cortos y comentarios de apoyo. Leelos como una receta: primero mira el objetivo, luego ubica los datos y finalmente completa el codigo en el orden que te piden.
+---
 
-Ejemplo visual del resultado:
+## Estado del modulo
 
-![Ejemplo de gráfico de líneas](https://commons.wikimedia.org/wiki/Special:FilePath/Pushkin_population_history.svg)
-
-## Diagrama de Dispersión
-
-El diagrama de dispersión muestra cada dato como un punto independiente.
-Es ideal para analizar la relación entre dos variables y detectar patrones u outliers.
-
-> [!TIP]
-> **Cuándo usarla:** cuando comparas dos variables numéricas al mismo tiempo.
-> **Qué te ayuda a ver:** si existe relación entre ambas variables y si hay puntos atípicos (outliers).
-> **Ejemplo típico:** horas de estudio vs calificación, altura vs peso, precio vs tamaño.
-
-```python
-import matplotlib.pyplot as plt
-x = [1, 2, 3, 4, 5]
-y = [2, 3, 5, 7, 11]
-plt.scatter(x, y)
-plt.title("Diagrama de Dispersión")
-plt.show()
-```
-
-Ejemplo visual del resultado:
-
-![Ejemplo de diagrama de dispersión](https://commons.wikimedia.org/wiki/Special:FilePath/Speed_of_cars_and_distance_to_stop.png)
-
-## Histogramas
-
-El histograma muestra la distribución de una variable numérica agrupando valores por intervalos.
-
-> [!TIP]
-> **Cuándo usarla:** cuando analizas una sola variable numérica con muchos datos.
-> **Qué te ayuda a ver:** en qué rangos se concentran los valores y cómo es su distribución.
-> **Ejemplo típico:** edades de un grupo, tiempos de entrega, notas de un examen.
-
-```python
-import matplotlib.pyplot as plt
-data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
-plt.hist(data, bins=4)
-plt.title("Histograma")
-plt.show()
-```
-
-Ejemplo visual del resultado:
-
-![Ejemplo de histograma](https://commons.wikimedia.org/wiki/Special:FilePath/Black_cherry_tree_histogram.svg)
-
-## Personalizar los Gráficos
-
-En esta sección veremos cuatro personalizaciones básicas y muy útiles para empezar:
-
-Un tick es cada marca visible en los ejes (X o Y), junto con su etiqueta; sirve para leer correctamente la escala de la gráfica.
-
-1. Dar nombre al eje X con `plt.xlabel()`.
-2. Dar nombre al eje Y con `plt.ylabel()`.
-3. Agregar un título con `plt.title()`.
-4. Ajustar las marcas de los ejes (ticks) con `plt.xticks()` y `plt.yticks()`.
-
-> [!TIP]
-> Usa etiquetas y título desde el inicio. Un gráfico sin contexto puede verse bien, pero no siempre se entiende rápido.
-
-```python
-import matplotlib.pyplot as plt
-
-x = [1, 2, 3, 4, 5]
-y = [2, 3, 5, 7, 11]
-
-plt.plot(x, y)
-
-# Título y nombres de ejes
-plt.title("Crecimiento de valores")
-plt.xlabel("Tiempo (días)")
-plt.ylabel("Valor")
-
-# Ticks (marcas visibles en los ejes)
-plt.xticks([1, 2, 3, 4, 5])
-plt.yticks([0, 2, 4, 6, 8, 10, 12])
-
-plt.show()
-```
-
-Ejemplo visual del resultado:
-
-![Ejemplo de gráfico personalizado](https://commons.wikimedia.org/wiki/Special:FilePath/ScientificGraphSpeedVsTime.svg)
-
-## Más Personalización Básica
-
-Cuando ya tienes título, ejes y ticks, el siguiente paso es mejorar la lectura visual.
-
-1. Agregar texto dentro del gráfico con `plt.text()`.
-2. Cambiar color y estilo de línea con `color` y `linestyle`.
-3. Activar cuadrícula con `plt.grid()`.
-
-> [!TIP]
-> Estas opciones no cambian tus datos; mejoran la claridad y facilitan la interpretación.
-
-```python
-import matplotlib.pyplot as plt
-
-x = [1, 2, 3, 4, 5]
-y = [2, 3, 5, 7, 11]
-
-# Color y estilo de línea
-plt.plot(x, y, color="teal", linestyle="--", marker="o", label="Serie A")
-
-# Título y ejes
-plt.title("Ejemplo con texto, color y grid")
-plt.xlabel("Tiempo")
-plt.ylabel("Valor")
-
-# Texto dentro del gráfico (x, y, "mensaje")
-plt.text(3, 5.2, "Punto medio")
-
-# Cuadrícula
-plt.grid(True)
-
-# Leyenda
-plt.legend()
-
-plt.show()
-```
+- Los README de cada bloque explican que haras en cada bloque y cada reto.
+- Los archivos `.py` contienen solo lo necesario para resolver cada ejercicio.
+- La idea es aprender por etapas, con poco ruido y con una ruta clara.
