@@ -1,30 +1,16 @@
 """Reto 1: Crear arreglos basicos con NumPy
 
 Objetivo:
-- Entender como pasar de listas de Python a arreglos de NumPy.
-
-Instrucciones:
-1) Importa NumPy.
-2) Crea un arreglo con numeros del 1 al 5.
-3) Imprime el arreglo y su tipo.
-4) Imprime la cantidad de elementos que tiene.
+- Convertir datos simples en un arreglo de NumPy.
 """
+
+from pathlib import Path
 
 import numpy as np
 
-# TODO: crea el arreglo a partir de una lista normal
-numbers = np.array([1, 2, 3, 4, 5])
+data_file = Path(__file__).resolve().parents[3] / "data" / "numpy" / "numeros_base.csv"
+numbers = np.loadtxt(data_file, delimiter=",", skiprows=1, dtype=int)
 
-# TODO: imprime el arreglo para ver su contenido
 print(numbers)
-
-# TODO: imprime el tipo de dato de la variable
 print(type(numbers))
-
-# TODO: imprime el numero total de elementos
 print(numbers.size)
-
-# GLOSARIO
-# - np.array(): convierte una lista en un arreglo de NumPy.
-# - type(): muestra el tipo de la variable.
-# - size: indica cuantos elementos tiene el arreglo.
