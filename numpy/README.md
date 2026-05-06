@@ -1,4 +1,148 @@
-# Guía de NumPy
+# NumPy: arreglos y operaciones vectorizadas
+
+![NumPy logo](https://numpy.org/images/logo.svg)
+
+> Convierte listas en arreglos eficientes y aprende a trabajar con operaciones numéricas de forma clara y rápida.
+
+---
+
+## Tabla de contenido
+
+1. [Que es NumPy](#que-es-numpy)
+2. [Que puedes lograr con NumPy](#que-puedes-lograr-con-numpy)
+3. [Ruta de aprendizaje de este modulo](#ruta-de-aprendizaje-de-este-modulo)
+4. [Como ejecutar los retos](#como-ejecutar-los-retos)
+5. [Convencion de nombres](#convencion-de-nombres)
+6. [Datos del modulo](#datos-del-modulo)
+7. [Recursos oficiales](#recursos-oficiales)
+8. [Estado del modulo](#estado-del-modulo)
+
+---
+
+## Que es NumPy
+
+NumPy es la libreria base para trabajar con datos numericos en Python.
+
+Con NumPy puedes:
+
+- Crear arreglos eficientes.
+- Trabajar con matrices y dimensiones.
+- Hacer operaciones vectorizadas sin bucles.
+- Filtrar valores con condiciones booleanas.
+- Preparar la base para Pandas, Matplotlib y analisis numerico.
+
+En palabras simples: NumPy te ayuda a pensar en datos numericos como arreglos, no como listas sueltas.
+
+---
+
+## Que puedes lograr con NumPy
+
+### Analisis numerico
+
+- Revisar forma, tipo y dimensiones de un arreglo.
+- Seleccionar posiciones concretas con slicing.
+- Calcular resumenes rapidos.
+
+### Operaciones sobre datos
+
+- Sumar, restar o multiplicar todos los elementos a la vez.
+- Aplicar condiciones para filtrar datos.
+- Combinar mascaras booleanas.
+
+### Base para otros modulos
+
+- Pandas usa arreglos numericos bajo el capot.
+- Matplotlib puede graficar los resultados que prepares aqui.
+
+---
+
+## Ruta de aprendizaje de este modulo
+
+Este modulo esta dividido en dos bloques:
+
+1. `retos/bloque_1` - fundamentos de arreglos y seleccion.
+2. `retos/bloque_2` - operaciones vectorizadas y condiciones.
+
+### Bloque 1: fundamentos
+
+- Reto 1: crear arreglos basicos.
+- Reto 2: leer forma, dimensiones y tipo.
+- Reto 3: indexado y slices.
+- Reto 4: operaciones vectorizadas.
+- Reto 5: filtrado booleano.
+- Reto 6: resumen simple de datos.
+
+### Bloque 2: intermedio
+
+- Reto 1: operaciones vectorizadas.
+- Reto 2: filtrado booleano.
+- Reto 3: resumen simple.
+- Reto 4: logical_and.
+- Reto 5: logical_or.
+- Reto 6: logical_not.
+
+---
+
+## Como ejecutar los retos
+
+Desde la raiz del modulo:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r numpy/requirements.txt
+python numpy/retos/bloque_1/reto_1_arreglos_basicos.py
+```
+
+Puedes cambiar el ultimo archivo por cualquiera de los demas retos.
+
+---
+
+## Convencion de nombres
+
+Los ejercicios usan este formato:
+
+- `reto_1_...py`
+- `reto_2_...py`
+- `reto_3_...py`
+
+La idea es resolverlos en orden porque cada uno agrega un concepto nuevo.
+
+---
+
+## Datos del modulo
+
+Los archivos de apoyo estan en:
+
+- `data/numpy/`
+
+Archivos disponibles:
+
+- `numeros_base.csv` - arreglos basicos.
+- `secuencia_6.csv` - valores para indexado.
+- `matriz_2x3.csv` - matriz simple para forma y dimensiones.
+- `precios.csv` - precios para operaciones vectorizadas.
+- `temperaturas.csv` - datos para filtrado booleano.
+- `puntajes.csv` - datos para resumen simple.
+- `edades.csv` - datos para filtros con condiciones compuestas.
+- `puntajes_extremos.csv` - datos para logical_or.
+
+---
+
+## Recursos oficiales
+
+- [Sitio oficial de NumPy](https://numpy.org/)
+- [Documentacion de NumPy](https://numpy.org/doc/)
+- [Guia rapida](https://numpy.org/doc/stable/user/quickstart.html)
+- [Referencia de API](https://numpy.org/doc/stable/reference/)
+
+---
+
+## Estado del modulo
+
+- Los README de cada bloque explican que vas a aprender en cada parte.
+- Los archivos `.py` contienen solo lo necesario para resolver cada ejercicio.
+- Los datos de apoyo viven en `data/numpy/` para reutilizarlos en los retos.# Guía de NumPy
 
 NumPy es la base del trabajo numerico en Python. Sirve para crear arreglos eficientes, hacer operaciones vectorizadas y construir una base solida antes de pasar a Pandas o visualizacion.
 
