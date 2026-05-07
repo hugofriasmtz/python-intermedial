@@ -1,19 +1,32 @@
-# Python Intermedio - Prácticas y Apuntes
+# Python Intermedio
 
-Este repositorio reúne mis prácticas de Python con enfoque aplicado: visualización, análisis de datos y uso de librerías comunes en entornos profesionales.
+Repositorio de prácticas y apuntes para reforzar Python intermedio con un enfoque práctico: análisis de datos, visualización y uso de librerías clave del ecosistema científico.
 
-## Objetivo
+![Logo de Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
 
-- Consolidar fundamentos de Python intermedio.
-- Practicar librerías del ecosistema de datos.
-- Documentar aprendizajes con ejemplos claros y progresivos.
+## Qué vas a encontrar
 
-## Estructura del Repositorio
+- Ejercicios cortos y progresivos.
+- Retos organizados por bloques para avanzar sin saltos bruscos.
+- Apuntes con ejemplos concretos y listos para reutilizar.
+- Material pensado para practicar en un entorno aislado por módulo.
 
-Actualmente el repositorio está organizado por librería o tema:
+## Mapa del proyecto
+
+Este mapa sigue el orden actual del repositorio: NumPy, Matplotlib y Pandas.
 
 ```text
 python_intermedio/
+├── data/
+│   ├── numpy/
+│   │   ├── README.md
+│   │   └── *.csv
+│   ├── matplotlib/
+│   │   ├── README.md
+│   │   └── *.csv
+│   └── pandas/
+│       ├── README.md
+│       └── *.csv
 ├── numpy/
 │   ├── README.md
 │   ├── requirements.txt
@@ -27,44 +40,31 @@ python_intermedio/
 │       ├── bloque_1/
 │       └── bloque_2/
 ├── pandas/
-│   └── README.md
+│   ├── README.md
+│   ├── requirements.txt
+│   └── retos/
+│       ├── bloque_1/
+│       └── bloque_2/
 └── README.md
 ```
 
-## Contenido Actual
+Cada módulo mantiene una estructura parecida para que puedas moverte entre temas sin perder el contexto.
 
-### Matplotlib
+## Bloques principales
 
-Incluye:
+| Módulo | Enfoque |
+| --- | --- |
+| NumPy | Arreglos, tipos de datos, indexado y operaciones vectorizadas. |
+| Matplotlib | Gráficos, personalización visual, subplots y combinaciones. |
+| Pandas | DataFrames, selección, filtros, resúmenes y agrupaciones. |
 
-- Guía base de conceptos y tipos de gráficos.
-- Preparación de entorno virtual para trabajar de forma aislada.
-- Retos progresivos por bloques.
-- Buenas prácticas de presentación de gráficos.
-
-### Pandas
-
-Incluye:
-
-- Guía inicial sobre qué es Pandas y para qué sirve.
-- Conceptos básicos para comenzar a trabajar con datos tabulares.
-- Base para futuros ejemplos, apuntes y ejercicios.
-
-### NumPy
-
-Incluye:
-
-- Guía base para entender arreglos, tipos de datos y operaciones vectorizadas.
-- Retos simples para practicar creacion, indexado y operaciones con `ndarray`.
-- Ejercicios progresivos con comentarios para recordar por que se escribe cada linea.
-
-## Cómo Empezar
+## Cómo empezar
 
 1. Clona el repositorio.
-2. Entra a la carpeta del módulo que quieras practicar (por ejemplo, `matplotlib/`).
+2. Entra a la carpeta del módulo que quieras practicar, por ejemplo `matplotlib/`.
 3. Crea y activa un entorno virtual.
-4. Instala dependencias del módulo.
-5. Resuelve retos y documenta mejoras.
+4. Instala las dependencias del módulo.
+5. Resuelve los retos y anota tus aprendizajes.
 
 Comandos base:
 
@@ -74,20 +74,21 @@ source .venv/bin/activate
 pip install -r numpy/requirements.txt
 ```
 
-Si quieres empezar con Pandas o Matplotlib, entra a sus carpetas y sigue una estructura similar.
+Si vas a trabajar con Pandas o Matplotlib, cambia la ruta del archivo `requirements.txt` al módulo correspondiente.
 
-## Convenciones del Repo
+## Convenciones
 
-- Organización por módulos (una carpeta por librería o tema).
-- Retos en orden progresivo (`bloque_1`, `bloque_2`, etc.).
-- Archivos de dependencias por módulo.
-- Entorno virtual fuera de control de versiones (`.venv/` en `.gitignore`).
+- Una carpeta por librería o tema.
+- Retos ordenados por bloques (`bloque_1`, `bloque_2`, etc.).
+- Dependencias separadas por módulo.
+- Entorno virtual fuera de control de versiones (`.venv/`).
 
-## Próximos Módulos
+## Próximas ideas
 
 - Limpieza y transformación de datos.
-- Mini casos integrando varias librerías.
+- Mini proyectos integrando varias librerías.
+- Más ejemplos visuales con capturas y resultados reales.
 
-## Estado del Proyecto
+## Estado
 
-En construcción. Este repositorio se irá actualizando de forma continua con nuevas prácticas y mejoras.
+En construcción. La idea es ir sumando prácticas, mejoras visuales y material de apoyo de forma continua.
