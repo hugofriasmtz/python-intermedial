@@ -41,6 +41,125 @@ Esto te ayuda a aprender metodos nuevos sin cambiar de contexto de datos.
 
 ---
 
+## Guia rapida de uso
+
+### `sort_values()` y `head()`
+
+`sort_values()` ordena un DataFrame por una o varias columnas. `head()` devuelve las primeras filas del resultado.
+
+Sirven para:
+
+- Encontrar los valores mas altos o mas bajos.
+- Crear rankings rapidos.
+- Quedarte con un top N.
+
+Ejemplo:
+
+```python
+ordenado = df.sort_values(by="goles", ascending=False)
+print(ordenado.head(5))
+```
+
+### `isin()` y operadores `&` / `|`
+
+`isin()` comprueba si un valor pertenece a una lista. `&` significa "y" y `|` significa "o".
+
+Sirven para:
+
+- Filtrar varias categorias a la vez.
+- Combinar condiciones sin perder claridad.
+
+Ejemplo:
+
+```python
+filtro = df[(df["pais"].isin(["Mexico", "Brazil"])) & (df["goles"] > 5)]
+print(filtro)
+```
+
+### `groupby()`
+
+`groupby()` separa el DataFrame en grupos segun una columna o combinacion de columnas.
+
+Sirve para:
+
+- Resumir por categoria.
+- Comparar grupos entre si.
+- Responder preguntas como "cuanto hay por tipo" o "cual es el promedio por pais".
+
+Ejemplo:
+
+```python
+por_pais = df.groupby("pais")["goles"].sum()
+print(por_pais)
+```
+
+### `agg()`
+
+`agg()` aplica varias funciones de resumen sobre los grupos creados por `groupby()`.
+
+Sirve para:
+
+- Calcular varias metricas en una sola pasada.
+- Obtener min, max, media y mediana al mismo tiempo.
+
+Ejemplo:
+
+```python
+resumen = df.groupby("pais")["goles"].agg(["min", "max", "mean", "median"])
+print(resumen)
+```
+
+### `merge()`
+
+`merge()` une dos DataFrames usando una columna comun.
+
+Sirve para:
+
+- Enriquecer una tabla con informacion de otra.
+- Combinar datos de distintos archivos.
+
+Ejemplo:
+
+```python
+resultado = df1.merge(df2, on="id", how="inner")
+print(resultado)
+```
+
+### `pivot_table()`
+
+`pivot_table()` reorganiza datos para cruzar una categoria por filas con otra por columnas.
+
+Sirve para:
+
+- Ver patrones de forma mas visual.
+- Crear tablas de resumen tipo matriz.
+
+Ejemplo:
+
+```python
+tabla = df.pivot_table(values="goles", index="pais", columns="posicion", aggfunc="mean")
+print(tabla)
+```
+
+### `to_datetime()` y `.dt`
+
+`to_datetime()` convierte texto a formato fecha. `.dt` permite extraer partes de esa fecha.
+
+Sirven para:
+
+- Trabajar con meses, anos o dias.
+- Hacer resúmenes temporales.
+
+Ejemplo:
+
+```python
+df["fecha"] = pd.to_datetime(df["fecha"])
+df["mes"] = df["fecha"].dt.month
+print(df[["fecha", "mes"]])
+```
+
+---
+
 ## Ruta recomendada (de menor a mayor dificultad)
 
 1. `01_ordenamiento_y_top.py`
