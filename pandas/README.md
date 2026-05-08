@@ -15,7 +15,7 @@
 1. [Que es pandas](#que-es-pandas)
 2. [Que puedes lograr con pandas](#que-puedes-lograr-con-pandas)
 3. [Donde se usa en el mundo real](#donde-se-usa-en-el-mundo-real)
-4. [Ruta de aprendizaje de este repo](#ruta-de-aprendizaje-de-este-repo)
+4. [Ruta de aprendizaje del modulo](#ruta-de-aprendizaje-del-modulo)
 5. [Como ejecutar los retos](#como-ejecutar-los-retos)
 6. [Convencion de nombres de retos](#convencion-de-nombres-de-retos)
 7. [Datos del modulo](#datos-del-modulo)
@@ -80,18 +80,21 @@ Si tu trabajo involucra tablas o reportes, pandas es una habilidad clave.
 
 ---
 
-## Ruta de aprendizaje de este repo
+## Ruta de aprendizaje del modulo
 
 Este modulo esta pensado para avanzar con estructura clara:
 
 1. `retos/bloque_1`: fundamentos (estructura, seleccion, filtros basicos).
 2. `retos/bloque_2`: operaciones intermedias (groupby, merge, pivot, fechas).
+3. `retos/bloque_3`: estadisticas de Series y conteo (resumen numerico, acumulados, duplicados y frecuencias).
 
 Recomendacion de uso:
 
 - Lee primero el README del bloque.
 - Resuelve el reto por tu cuenta.
 - Compara y mejora tu solucion.
+
+Si estas ampliando el contenido, mi recomendacion es crear un bloque 3 en lugar de sobrecargar el bloque 2. Los temas de estadisticas de Series y conteo forman una familia propia y se entienden mejor como una etapa posterior.
 
 ---
 
@@ -106,7 +109,7 @@ pip install -r pandas/requirements.txt
 python pandas/retos/bloque_1/01_dataframe_basico.py
 ```
 
-Puedes cambiar el archivo final por cualquier otro reto del bloque 1 o 2.
+Puedes cambiar el archivo final por cualquier otro reto del bloque 1, 2 o 3.
 
 ---
 
