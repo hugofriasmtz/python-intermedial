@@ -119,6 +119,40 @@ Para que sirve:
 1. Enfocarte en la informacion relevante.
 2. Reducir ruido antes del analisis.
 
+### `.loc` y `.iloc`
+
+Cuando quieres seleccionar filas o columnas de forma mas precisa, usas `.loc` o `.iloc`.
+
+Regla rapida:
+
+- `.loc` trabaja con etiquetas o nombres.
+- `.iloc` trabaja con posiciones numericas.
+
+Ejemplos:
+
+```python
+print(df.loc[0])
+print(df.loc[0:3])
+print(df.iloc[0])
+print(df.iloc[0:3])
+```
+
+Si el DataFrame tiene un indice con nombres o categorias, `.loc` te deja seleccionar por esos valores.
+Si quieres seleccionar por lugar exacto dentro de la tabla, `.iloc` es la opcion correcta.
+
+Cuando hay rangos:
+
+- `.loc[1:4]` incluye el valor final si ese valor existe en el indice.
+- `.iloc[1:4]` sigue el estilo de slicing de Python y no incluye el final.
+
+Esto es importante porque mucha gente se confunde al pasar de seleccionar columnas con corchetes a seleccionar filas con `.loc` y `.iloc`.
+
+Idea simple para recordarlo:
+
+- Corchetes `[]` para seleccionar columnas.
+- `.loc` para cortar usando etiquetas.
+- `.iloc` para cortar usando posiciones.
+
 ---
 
 ## Paso 5: filtros basicos
@@ -176,5 +210,6 @@ Nota: en esta etapa sigue el orden completo de 01 a 07 para subir dificultad gra
 2. Puedes explicar `shape`, `columns` e `index`.
 3. Puedes usar al menos 3 metodos de resumen numerico.
 4. Puedes seleccionar columnas con corchetes.
-5. Puedes aplicar un filtro simple.
-6. Puedes detectar nulos por columna.
+5. Puedes diferenciar entre `.loc` e `.iloc`.
+6. Puedes aplicar un filtro simple.
+7. Puedes detectar nulos por columna.

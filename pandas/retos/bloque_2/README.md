@@ -149,6 +149,7 @@ Sirven para:
 
 - Trabajar con meses, anos o dias.
 - Hacer resúmenes temporales.
+- Extraer componentes de una fecha sin crear columnas manualmente.
 
 Ejemplo:
 
@@ -157,6 +158,39 @@ df["fecha"] = pd.to_datetime(df["fecha"])
 df["mes"] = df["fecha"].dt.month
 print(df[["fecha", "mes"]])
 ```
+
+Los accesores mas utiles de `.dt` son:
+
+- `.dt.year`: extrae el ano.
+- `.dt.month`: extrae el mes como numero.
+- `.dt.day`: extrae el dia del mes.
+- `.dt.day_name()`: devuelve el nombre del dia.
+- `.dt.month_name()`: devuelve el nombre del mes.
+- `.dt.quarter`: devuelve el trimestre.
+- `.dt.weekday`: devuelve el dia de la semana como numero.
+- `.dt.dayofweek`: devuelve el dia de la semana como numero, de lunes a domingo.
+- `.dt.dayofyear`: devuelve el dia del ano.
+- `.dt.isocalendar().week`: devuelve la semana ISO.
+- `.dt.hour`, `.dt.minute` y `.dt.second`: extraen la hora si la fecha incluye tiempo.
+- `.dt.strftime("%Y-%m")`: da formato personalizado de fecha.
+
+Ejemplo con varias partes:
+
+```python
+df["anio"] = df["fecha"].dt.year
+df["mes"] = df["fecha"].dt.month
+df["dia"] = df["fecha"].dt.day
+df["trimestre"] = df["fecha"].dt.quarter
+df["nombre_dia"] = df["fecha"].dt.day_name()
+print(df[["fecha", "anio", "mes", "dia", "trimestre", "nombre_dia"]])
+```
+
+Importante:
+
+- No existe un `dt.component` general para fechas; lo normal es usar propiedades como `year`, `month`, `day` o `quarter`.
+- `.dt` solo funciona en columnas con datos tipo fecha o tiempo.
+- Si tu columna es texto, primero debes usar `to_datetime()`.
+- Si quieres resumir por mes, a veces conviene usar `to_period("M")`.
 
 ---
 
@@ -195,6 +229,9 @@ Enfocado en construir una matriz de resumen para lectura rapida.
 7. `07_fechas_y_resumen.py`
 Enfocado en convertir texto a fecha, extraer mes y resumir por periodo.
 
+8. `08_componentes_fecha.py`
+Enfocado en practicar `.dt.year`, `.dt.month`, `.dt.day`, `.dt.day_name()`, `.dt.quarter` y `.dt.weekday`.
+
 ---
 
 ## Como estudiar este bloque
@@ -231,3 +268,4 @@ Despues de ejecutar:
 4. Puedes unir tablas y explicar diferencia entre inner y left.
 5. Puedes construir un pivot table legible.
 6. Puedes generar un resumen mensual con fechas.
+7. Puedes extraer ano, mes, dia y otras partes de una fecha con `.dt`.
