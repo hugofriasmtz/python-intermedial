@@ -238,6 +238,21 @@ Importante:
 
 Counting significa contar cuantas veces aparece cada valor.
 
+Ejemplos utiles:
+
+```python
+# conteo y proporciones
+print(df["posicion"].value_counts())
+print((df["posicion"].value_counts(normalize=True) * 100).round(2))  # %
+
+# quitar duplicados por equipo
+sin_dup = df.drop_duplicates(subset=["equipo"]) 
+print(sin_dup.shape)
+
+# acumulados: maximo acumulado de goles
+print(df["goles"].cummax().head())
+```
+
 ### `value_counts()`
 
 Cuenta la frecuencia de cada valor unico.

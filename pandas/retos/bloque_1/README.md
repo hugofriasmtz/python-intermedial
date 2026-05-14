@@ -2,7 +2,7 @@
 
 ![pandas mark](https://pandas.pydata.org/static/img/pandas_mark.svg)
 
-> Esta guia te lleva desde cero en un orden simple: cargar datos, entenderlos y hacer analisis basico.
+> Esta guia te lleva desde cero en un orden simple: crear DataFrames, cargar datos, entenderlos y hacer analisis basico.
 
 ---
 
@@ -10,17 +10,20 @@
 
 Al terminar este bloque deberias poder:
 
-1. Cargar datos en un DataFrame.
-2. Revisar estructura y columnas.
-3. Obtener resúmenes numericos clave.
-4. Seleccionar columnas con corchetes.
-5. Filtrar filas con condiciones.
-6. Detectar valores nulos.
+1. Crear DataFrames desde estructuras de Python.
+2. Leer y escribir archivos CSV.
+3. Cargar datos en un DataFrame.
+4. Revisar estructura y columnas.
+5. Obtener resúmenes numericos clave.
+6. Seleccionar columnas con corchetes.
+7. Filtrar filas con condiciones.
+8. Detectar valores nulos.
 
 ---
 
 ## Orden recomendado de aprendizaje
 
+0. Crear DataFrames y trabajar con CSV.
 1. Cargar datos.
 2. Revisar estructura.
 3. Resumir columnas numericas.
@@ -29,6 +32,85 @@ Al terminar este bloque deberias poder:
 6. Revisar nulos.
 
 Regla mental: primero entender los datos, despues transformarlos.
+
+---
+
+## Paso 0: crear DataFrames y trabajar con CSV
+
+Pandas te deja crear DataFrames directamente desde estructuras de Python y luego leer o escribir archivos CSV reales.
+
+### 0A. Lista de diccionarios
+
+Cada diccionario representa una fila.
+
+```python
+datos = [
+    {"nombre": "Ana", "edad": 28, "pais": "Mexico"},
+    {"nombre": "Luis", "edad": 31, "pais": "Chile"},
+]
+
+df = pd.DataFrame(datos)
+```
+
+### 0B. Diccionario de listas
+
+Cada clave representa una columna.
+
+```python
+datos = {
+    "nombre": ["Ana", "Luis"],
+    "edad": [28, 31],
+    "pais": ["Mexico", "Chile"],
+}
+
+df = pd.DataFrame(datos)
+```
+
+### Como se estructuran
+
+- En una lista de diccionarios, las llaves del diccionario se convierten en columnas.
+- En un diccionario de listas, cada lista debe tener la misma longitud para formar filas completas.
+
+### Para que sirve crear DataFrames asi
+
+1. Te permite construir tablas desde cero.
+2. Te ayuda a entender como se forma una tabla en pandas.
+3. Te prepara para trabajar con datos reales.
+
+Regla mental:
+
+- `DataFrame(...)` para construir tablas.
+
+### 0C. Leer un CSV real de la carpeta `data`
+
+Cuando ya tienes un archivo en `data/pandas/`, puedes leerlo directamente con `read_csv(...)`.
+
+Ejemplo:
+
+```python
+df = pd.read_csv("data/pandas/jugadores_futbol.csv")
+```
+
+### 0D. Escribir un CSV
+
+Tambien puedes guardar una copia temporal o una version procesada con `to_csv(...)`.
+
+Ejemplo:
+
+```python
+df.to_csv("data/pandas/copia_jugadores.csv", index=False)
+```
+
+### Para que sirve leer y escribir CSV
+
+- Te permite usar archivos reales como entrada.
+- Te ayuda a guardar resultados intermedios.
+- Separa claramente la creacion de DataFrames de la lectura/escritura de archivos.
+
+Regla mental:
+
+- `read_csv(...)` para leer archivos.
+- `to_csv(...)` para guardar archivos.
 
 ---
 
@@ -145,13 +227,28 @@ Cuando hay rangos:
 - `.loc[1:4]` incluye el valor final si ese valor existe en el indice.
 - `.iloc[1:4]` sigue el estilo de slicing de Python y no incluye el final.
 
-Esto es importante porque mucha gente se confunde al pasar de seleccionar columnas con corchetes a seleccionar filas con `.loc` y `.iloc`.
-
 Idea simple para recordarlo:
 
 - Corchetes `[]` para seleccionar columnas.
 - `.loc` para cortar usando etiquetas.
 - `.iloc` para cortar usando posiciones.
+
+### Añadir columnas y conteos rápidos
+
+Puedes crear columnas derivadas con asignación y usar `value_counts()` o `drop_duplicates()` para entender frecuencias o unicidad:
+
+```python
+# nueva columna derivada
+df["goles_por_partido"] = df["goles"] / df["partidos"]
+print(df[["nombre", "goles_por_partido"]].head())
+
+# conteo por pais
+print(df["pais"].value_counts())
+print(df["pais"].value_counts(normalize=True))  # proporciones
+
+# eliminar duplicados por columna
+print(df.drop_duplicates(subset=["pais"]).shape)
+```
 
 ---
 
@@ -192,6 +289,7 @@ Para que sirve:
 
 ## Relacion con los retos del bloque
 
+0. `00_creacion_dataframes_y_csv.py`: crear DataFrames y leer/escribir CSV.
 1. `01_dataframe_basico.py`: cargar CSV y crear DataFrame.
 2. `02_revision_inicial.py`: revisar estructura inicial.
 3. `03_seleccion_corchetes.py`: seleccionar columnas y filas basicas.
@@ -200,16 +298,19 @@ Para que sirve:
 6. `06_filtros_basicos.py`: aplicar filtros simples.
 7. `07_nulos_basicos.py`: detectar y tratar nulos.
 
-Nota: en esta etapa sigue el orden completo de 01 a 07 para subir dificultad gradualmente.
+Nota: en esta etapa sigue el orden completo de 00 a 07 para subir dificultad gradualmente.
 
 ---
 
 ## Checklist de avance
 
-1. Puedes cargar el CSV sin ayuda.
-2. Puedes explicar `shape`, `columns` e `index`.
-3. Puedes usar al menos 3 metodos de resumen numerico.
-4. Puedes seleccionar columnas con corchetes.
-5. Puedes diferenciar entre `.loc` e `.iloc`.
-6. Puedes aplicar un filtro simple.
-7. Puedes detectar nulos por columna.
+1. Puedes crear un DataFrame desde una lista de diccionarios.
+2. Puedes crear un DataFrame desde un diccionario de listas.
+3. Puedes leer y escribir un CSV.
+4. Puedes cargar el CSV sin ayuda.
+5. Puedes explicar `shape`, `columns` e `index`.
+6. Puedes usar al menos 3 metodos de resumen numerico.
+7. Puedes seleccionar columnas con corchetes.
+8. Puedes diferenciar entre `.loc` e `.iloc`.
+9. Puedes aplicar un filtro simple.
+10. Puedes detectar nulos por columna.

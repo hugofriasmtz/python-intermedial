@@ -109,6 +109,16 @@ resumen = df.groupby("pais")["goles"].agg(["min", "max", "mean", "median"])
 print(resumen)
 ```
 
+Ejemplo con varias columnas y funciones diferentes:
+
+```python
+sales = df.groupby(["pais", "posicion"]).agg({
+    "goles": ["sum", "mean"],
+    "valor_millones": "mean",
+})
+print(sales)
+```
+
 ### `merge()`
 
 `merge()` une dos DataFrames usando una columna comun.
@@ -183,6 +193,20 @@ df["dia"] = df["fecha"].dt.day
 df["trimestre"] = df["fecha"].dt.quarter
 df["nombre_dia"] = df["fecha"].dt.day_name()
 print(df[["fecha", "anio", "mes", "dia", "trimestre", "nombre_dia"]])
+
+### Quick plot (optional)
+
+Si quieres una visual rápida usa `matplotlib` (instalar `matplotlib` en `requirements.txt` si no está):
+
+```python
+import matplotlib.pyplot as plt
+
+totales_por_pais = df.groupby("pais")["goles"].sum().sort_values(ascending=False)
+totales_por_pais.head(10).plot(kind="bar", figsize=(8,4))
+plt.title("Goles totales por pais (top 10)")
+plt.ylabel("Goles")
+plt.tight_layout()
+plt.show()
 ```
 
 Importante:
