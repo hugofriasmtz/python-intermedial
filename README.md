@@ -1,32 +1,44 @@
 # Python Intermedio
 
-Repositorio de prácticas y apuntes para reforzar Python intermedio con un enfoque práctico: análisis de datos, visualización y uso de librerías clave del ecosistema científico.
+Repositorio principal de prácticas y apuntes para reforzar Python intermedio con un enfoque práctico. Aquí conviven ejercicios cortos, retos guiados y material de apoyo sobre análisis de datos, visualización y librerías clave del ecosistema científico.
 
-![Logo de Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+![Logo de Python](https://1000marcas.net/wp-content/uploads/2020/11/Python-logo.png)
 
-## Qué vas a encontrar
+> [!TIP]
+> Si solo quieres ubicaciones rápidas, empieza por la tabla de módulos y luego entra al bloque que estés practicando.
+
+## Ruta rápida
+
+| Quieres practicar | Ve a |
+| --- | --- |
+| NumPy | [numpy/](numpy/) |
+| Matplotlib | [matplotlib/](matplotlib/) |
+| Pandas | [pandas/](pandas/) |
+| Datos de apoyo | [data/](data/) |
+
+## Qué encontrarás aquí
 
 - Ejercicios cortos y progresivos.
 - Retos organizados por bloques para avanzar sin saltos bruscos.
 - Apuntes con ejemplos concretos y listos para reutilizar.
 - Material pensado para practicar en un entorno aislado por módulo.
 
-## Mapa del proyecto
+## Módulos del repositorio
 
-Este mapa sigue el orden actual del repositorio: NumPy, Matplotlib y Pandas.
+| Módulo | Enfoque |
+| --- | --- |
+| NumPy | Arreglos, tipos de datos, indexado y operaciones vectorizadas. |
+| Matplotlib | Gráficos, personalización visual, subplots y combinaciones. |
+| Pandas | DataFrames, selección, filtros, resúmenes y agrupaciones. |
+
+## Estructura general
 
 ```text
 python_intermedio/
 ├── data/
 │   ├── numpy/
-│   │   ├── README.md
-│   │   └── *.csv
 │   ├── matplotlib/
-│   │   ├── README.md
-│   │   └── *.csv
 │   └── pandas/
-│       ├── README.md
-│       └── *.csv
 ├── numpy/
 │   ├── README.md
 │   ├── requirements.txt
@@ -48,15 +60,7 @@ python_intermedio/
 └── README.md
 ```
 
-Cada módulo mantiene una estructura parecida para que puedas moverte entre temas sin perder el contexto.
-
-## Bloques principales
-
-| Módulo | Enfoque |
-| --- | --- |
-| NumPy | Arreglos, tipos de datos, indexado y operaciones vectorizadas. |
-| Matplotlib | Gráficos, personalización visual, subplots y combinaciones. |
-| Pandas | DataFrames, selección, filtros, resúmenes y agrupaciones. |
+La idea es que cada módulo mantenga una forma parecida para que puedas cambiar de tema sin perder contexto.
 
 ## Cómo empezar
 
@@ -65,8 +69,6 @@ Cada módulo mantiene una estructura parecida para que puedas moverte entre tema
 3. Crea y activa un entorno virtual.
 4. Instala las dependencias del módulo.
 5. Resuelve los retos y anota tus aprendizajes.
-
-Comandos base:
 
 ```bash
 python3 -m venv .venv
@@ -83,7 +85,7 @@ Si vas a trabajar con Pandas o Matplotlib, cambia la ruta del archivo `requireme
 - Dependencias separadas por módulo.
 - Entorno virtual fuera de control de versiones (`.venv/`).
 
-## Próximas ideas
+## Próximos pasos
 
 - Limpieza y transformación de datos.
 - Mini proyectos integrando varias librerías.
@@ -92,3 +94,9 @@ Si vas a trabajar con Pandas o Matplotlib, cambia la ruta del archivo `requireme
 ## Estado
 
 En construcción. La idea es ir sumando prácticas, mejoras visuales y material de apoyo de forma continua.
+
+## Redes
+
+- [GitHub](https://github.com/hugofriasmtz) 🐱
+- [LinkedIn](https://www.linkedin.com/in/hugofriasmtz) 🪪
+- [Correo](mailto:hugofriasmtz@hotmail.com) 📧
