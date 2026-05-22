@@ -42,8 +42,6 @@ En palabras simples: pandas te ayuda a convertir tablas desordenadas en respuest
 
 ## Que puedes lograr con pandas
 
-![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
-
 ### Analisis de ventas
 
 - Encontrar que ciudad vende mas.
@@ -66,8 +64,6 @@ En palabras simples: pandas te ayuda a convertir tablas desordenadas en respuest
 
 ## Donde se usa en el mundo real
 
-![pandas mark](https://pandas.pydata.org/static/img/pandas_mark.svg)
-
 pandas se usa en:
 
 - Fintech y banca: monitoreo de transacciones y riesgo.
@@ -84,17 +80,16 @@ Si tu trabajo involucra tablas o reportes, pandas es una habilidad clave.
 
 Este modulo esta pensado para avanzar con estructura clara:
 
-1. `retos/bloque_1`: fundamentos (estructura, seleccion, filtros basicos).
-2. `retos/bloque_2`: operaciones intermedias (groupby, merge, pivot, fechas).
-3. `retos/bloque_3`: estadisticas de Series y conteo (resumen numerico, acumulados, duplicados y frecuencias).
+1. `bloque 1`: fundamentos (estructura, seleccion, filtros basicos).
+2. `bloque 2`: operaciones intermedias (groupby, merge, pivot, fechas).
+3. `bloque 3`: estadisticas de Series y conteo (resumen numerico, acumulados, duplicados y frecuencias).
+4. `bloque 4`: union de datos (merge basico y tipos de union como left, right y outer).
 
 Recomendacion de uso:
 
 - Lee primero el README del bloque.
 - Resuelve el reto por tu cuenta.
 - Compara y mejora tu solucion.
-
-Si estas ampliando el contenido, mi recomendacion es crear un bloque 3 en lugar de sobrecargar el bloque 2. Los temas de estadisticas de Series y conteo forman una familia propia y se entienden mejor como una etapa posterior.
 
 ---
 
@@ -149,10 +144,10 @@ Asi evitas duplicar datasets en varias carpetas.
 
 Imagenes usadas por referencia visual de la libreria pandas:
 
-- Logo principal: `https://pandas.pydata.org/static/img/pandas.svg`
-- Logo principal (fondo oscuro): `https://pandas.pydata.org/static/img/pandas_white.svg`
-- Logo secundario: `https://pandas.pydata.org/static/img/pandas_secondary.svg`
-- Marca (icono): `https://pandas.pydata.org/static/img/pandas_mark.svg`
+- [Logo principal](https://pandas.pydata.org/static/img/pandas.svg)
+- [Logo principal (fondo oscuro)](https://pandas.pydata.org/static/img/pandas_white.svg)
+- [Logo secundario](https://pandas.pydata.org/static/img/pandas_secondary.svg)
+- [Marca (icono)](https://pandas.pydata.org/static/img/pandas_mark.svg)
 
 Fuente de marca y lineamientos:
 
@@ -160,4 +155,7 @@ Fuente de marca y lineamientos:
 
 ---
 
-**Estado:** En construccion
+![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
+
+>[!WARNING]
+>**Estado:** El Repositorio esta en desarrollo y se iran agregando retos, mejoras visuales y material de apoyo de forma continua.
