@@ -1,4 +1,4 @@
-# Unión por Derecha
+# 2.2 - Unión por Derecha
 
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 

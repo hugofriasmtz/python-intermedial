@@ -1,4 +1,4 @@
-# 04 - Unión Externa
+# 2.3 - Unión Externa
 
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 

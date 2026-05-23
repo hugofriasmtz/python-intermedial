@@ -1,4 +1,4 @@
-# Union por Izquierda
+# 2.1 - Unión por Izquierda
 
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 
