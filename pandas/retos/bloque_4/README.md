@@ -16,7 +16,7 @@
 | 03 | [Union por Derecha](02_union_de_tablas/2.2_union_por_derecha/README.md) | Conservar filas de la derecha con `how='right'` |
 | 04 | [Union Externa](02_union_de_tablas/2.3_union_externa/README.md) | Conservar todas las filas de ambas tablas (`how='outer'`) |
 
-![Diagrama de union tipo merge](https://media.licdn.com/dms/image/v2/D4D22AQEo9Hlysrf9ig/feedshare-shrink_1280/B4DZiZv9XaHwAs-/0/1754926149542?e=1781136000&v=beta&t=B86F-QUTsXvmddGdtj7o4SNQ1Pdpqb8l2MtoU7p1xRI)
+![Diagrama de union tipo merge](https://miro.medium.com/v2/resize:fit:1200/1*9eH1_7VbTZPZd9jBiGIyNA.png)
 
 > [!TIP]
 > Si vienes de Bloque 2 y 3, este bloque te ayudara a combinar informacion separada sin perder claridad.
