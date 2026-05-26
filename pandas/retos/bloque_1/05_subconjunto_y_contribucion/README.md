@@ -60,7 +60,6 @@ print(empleados_senior)
 - Deja claro que trabajas sobre una copia.
 - Impide modificar el DataFrame original accidentalmente.
 
-
 ---
 
 ## 2. Crear una columna nueva
