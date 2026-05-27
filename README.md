@@ -1,11 +1,11 @@
 # Python Intermedio
 
-Repositorio principal de prácticas y apuntes para reforzar Python intermedio con un enfoque práctico. Aquí conviven ejercicios cortos, retos guiados y material de apoyo sobre análisis de datos, visualización y librerías clave del ecosistema científico.
+Repositorio de prácticas y apuntes para consolidar Python a nivel intermedio, con foco en NumPy, Matplotlib y Pandas. Contiene retos guiados, ejemplos reutilizables y datos de apoyo para practicar localmente.
 
-![Logo de Python](https://1000marcas.net/wp-content/uploads/2020/11/Python-logo.png)
+![Logo de Python](https://www.python.org/static/community_logos/python-logo.png)
 
 > [!TIP]
-> Si solo quieres ubicaciones rápidas, empieza por la tabla de módulos y luego entra al bloque que estés practicando.
+> Usa la `Ruta rápida` para ir directo al módulo que quieras practicar.
 
 ## Ruta rápida
 
@@ -18,18 +18,18 @@ Repositorio principal de prácticas y apuntes para reforzar Python intermedio co
 
 ## Qué encontrarás aquí
 
-- Ejercicios cortos y progresivos.
-- Retos organizados por bloques para avanzar sin saltos bruscos.
-- Apuntes con ejemplos concretos y listos para reutilizar.
-- Material pensado para practicar en un entorno aislado por módulo.
+- Retos por bloques con soluciones y explicaciones.
+- Ejemplos comentados listos para ejecutar.
+- Datos de apoyo en `data/` para reproducir ejemplos.
+- Documentación didáctica orientada a la práctica.
 
-## Módulos del repositorio
+## Módulos principales
 
 | Módulo | Enfoque |
 | --- | --- |
-| NumPy | Arreglos, tipos de datos, indexado y operaciones vectorizadas. |
-| Matplotlib | Gráficos, personalización visual, subplots y combinaciones. |
-| Pandas | DataFrames, selección, filtros, resúmenes y agrupaciones. |
+| NumPy | Arreglos, indexado, operaciones vectorizadas. |
+| Matplotlib | Visualización, personalización y subplots. |
+| Pandas | Estructuras `DataFrame`, selección, joins y groupby. |
 
 ## Estructura general
 
@@ -56,47 +56,59 @@ python_intermedio/
 │   ├── requirements.txt
 │   └── retos/
 │       ├── bloque_1/
-│       └── bloque_2/
+│       ├── bloque_2/
+│       ├── bloque_3/
+│       └── bloque_4/
 └── README.md
 ```
 
 La idea es que cada módulo mantenga una forma parecida para que puedas cambiar de tema sin perder contexto.
 
-## Cómo empezar
+## Cómo empezar (rápido)
 
 1. Clona el repositorio.
-2. Entra a la carpeta del módulo que quieras practicar, por ejemplo `matplotlib/`.
+2. Entra al módulo que quieras practicar (por ejemplo `pandas/`).
 3. Crea y activa un entorno virtual.
-4. Instala las dependencias del módulo.
-5. Resuelve los retos y anota tus aprendizajes.
+4. Instala las dependencias del módulo que usarás.
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
-pip install -r numpy/requirements.txt
+source .venv/bin/activate     # Windows: .venv\Scripts\activate
+pip install -r pandas/requirements.txt
 ```
 
-Si vas a trabajar con Pandas o Matplotlib, cambia la ruta del archivo `requirements.txt` al módulo correspondiente.
+Ejecuta los scripts con `python archivos/script.py` o abre los notebooks si los hay.
 
-## Convenciones
+## Buenas prácticas del repo
 
-- Una carpeta por librería o tema.
-- Retos ordenados por bloques (`bloque_1`, `bloque_2`, etc.).
-- Dependencias separadas por módulo.
-- Entorno virtual fuera de control de versiones (`.venv/`).
+- Mantén un entorno virtual por módulo.
+- Ejecuta los ejemplos paso a paso y revisa las salidas.
+- Documenta cambios y añade ejemplos reproducibles.
+
+## Actualizaciones recientes
+
+- Añadido material de `pandas/retos/bloque_4` (joins y fusiones, self-merge).
+- Normalizadas las plantillas de README por módulo y ejemplos con salidas.
+- Agregadas vistas visuales en ejemplos para facilitar la lectura de resultados.
 
 ## Próximos pasos
 
-- Limpieza y transformación de datos.
-- Mini proyectos integrando varias librerías.
-- Más ejemplos visuales con capturas y resultados reales.
+- Más mini-proyectos que integren NumPy + Pandas + Matplotlib.
+- Añadir notebooks interactivos y capturas de resultados.
+- Revisión ortográfica y consistencia de estilo en todos los READMEs.
 
 ## Estado
 
-En construcción. La idea es ir sumando prácticas, mejoras visuales y material de apoyo de forma continua.
+Activo — en mejora continua. Pull requests y sugerencias son bienvenidas.
 
-## Redes
+## Contribuir
 
-- [GitHub](https://github.com/hugofriasmtz) 🐱
-- [LinkedIn](https://www.linkedin.com/in/hugofriasmtz) 🪪
-- [Correo](mailto:hugofriasmtz@hotmail.com) 📧
+1. Crea una rama nueva: `git checkout -b feat/mi-ejemplo`.
+2. Haz tus cambios en la carpeta correspondiente.
+3. Abre un PR describiendo el objetivo.
+
+## Contacto
+
+- GitHub: [hugofriasmtz](https://github.com/hugofriasmtz)
+- LinkedIn: [hugofriasmtz](https://www.linkedin.com/in/hugofriasmtz)
+- Correo: [hugofriasmtz@hotmail.com](mailto:hugofriasmtz@hotmail.com)
