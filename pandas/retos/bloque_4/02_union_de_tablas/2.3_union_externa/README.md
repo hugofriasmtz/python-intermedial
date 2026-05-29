@@ -3,17 +3,21 @@
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 
 > [!NOTE]
-> En este capítulo veremos la `outer join` (unión externa): conservar todas las filas de ambas tablas y combinar columnas donde haya coincidencias.
+> "La práctica consistente transforma lo difícil en dominio. Cada línea de código es un paso adelante."
+
+En esta lección aprenderás la unión externa (`outer`) para conservar el universo completo de registros de ambas tablas. Cubriremos cómo interpretar los `NaN` cuando no hay coincidencias, auditar el origen de cada fila con `indicator=True`, usar `suffixes` para distinguir columnas duplicadas y limpiar o filtrar el resultado tras la unión.
+
+**Documentación:** [Guía — Merge, join y concatenate](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html) — [API: pandas.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html)
 
 ---
 
-## Qué haremos
+## ¿Qué haremos?
 
 Trabajaremos con la biblioteca municipal. Aquí queremos conservar todos los socios y todas las sedes: cuando ninguna de las tablas tiene coincidencia, las columnas faltantes aparecerán como `NaN`.
 
 - **¿Qué pasa si un socio o una sede no tiene pareja en la otra tabla?** -> `how='outer'`
-- **¿Y si las llaves se llaman distinto?** -> `left_on` / `right_on`
-- **Cómo auditar la unión?** -> `indicator=True`
+-- **¿Y si la llave tiene distinto nombre?** -> `left_on` / `right_on`
+- **¿Cómo auditar la unión?** -> `indicator=True`
 
 > [!TIP]
 > La unión externa es útil para obtener el universo completo de registros cuando ninguna de las tablas debe perderse.
@@ -27,7 +31,7 @@ Trabajaremos con la biblioteca municipal. Aquí queremos conservar todos los soc
 
 ---
 
-## Qué vas a aprender
+## ¿Qué vas a aprender?
 
 - Qué significa `how='outer'`.
 - Cómo usar `left_on`/`right_on` cuando las columnas llave difieren.
@@ -57,7 +61,7 @@ import pandas as pd
 df_socios = pd.DataFrame({
     "socio_id": [1, 2, 3, 4, 5],
     "nombre": ["Hugo", "Karen", "Marcos", "Felipe", "Catalina"],
-    "ciudad": ["Ciudad de Mexico", "Guadalajara", "Monterrey", "Tijuana", "Merida"]
+    "ciudad": ["Ciudad de México", "Guadalajara", "Monterrey", "Tijuana", "Mérida"]
 })
 
 df_sedes = pd.DataFrame({
@@ -74,11 +78,11 @@ resultado = df_socios.merge(
 print(resultado)
 # Output esperado:
 #    socio_id    nombre             ciudad  id_socio    sede
-# 0       1.0      Hugo  Ciudad de Mexico       1.0   Centro
+# 0       1.0      Hugo  Ciudad de México       1.0   Centro
 # 1       2.0     Karen       Guadalajara       2.0    Norte
 # 2       3.0    Marcos         Monterrey       NaN      NaN
 # 3       4.0    Felipe           Tijuana       4.0      Sur
-# 4       5.0  Catalina             Merida       NaN      NaN
+# 4       5.0  Catalina             Mérida       NaN      NaN
 # 5       NaN       NaN               NaN       6.0  Oriente
 ```
 
@@ -105,11 +109,11 @@ resultado = df_socios.merge(
 print(resultado)
 # Output esperado (columna _merge):
 #    socio_id    nombre             ciudad  id_socio    sede      _merge
-# 0       1.0      Hugo  Ciudad de Mexico       1.0   Centro        both
+# 0       1.0      Hugo  Ciudad de México       1.0   Centro        both
 # 1       2.0     Karen       Guadalajara       2.0    Norte        both
 # 2       3.0    Marcos         Monterrey       NaN      NaN   left_only
 # 3       4.0    Felipe           Tijuana       4.0      Sur        both
-# 4       5.0  Catalina             Merida       NaN      NaN   left_only
+# 4       5.0  Catalina             Mérida       NaN      NaN   left_only
 # 5       NaN       NaN               NaN       6.0  Oriente  right_only
 ```
 
@@ -128,7 +132,7 @@ Si las tablas comparten columnas no llave, usa `suffixes` para distinguirlas.
 ```python
 df_sucursales = pd.DataFrame({
     "socio_id": [1, 2, 4],
-    "ciudad": ["Ciudad de Mexico", "Guadalajara", "Tijuana"],
+    "ciudad": ["Ciudad de México", "Guadalajara", "Tijuana"],
     "area": ["Centro", "Norte", "Sur"]
 })
 
@@ -141,17 +145,17 @@ resultado = df_socios.merge(
 print(resultado)
 # Output:
 #    socio_id    nombre   ciudad_socio   ciudad_sucursal    area
-# 0         1      Hugo  Ciudad de Mexico  Ciudad de Mexico  Centro
+# 0         1      Hugo  Ciudad de México  Ciudad de México  Centro
 # 1         2     Karen       Guadalajara       Guadalajara   Norte
 # 2         3    Marcos         Monterrey               NaN      NaN
 # 3         4    Felipe           Tijuana           Tijuana     Sur
-# 4         5  Catalina             Merida               NaN      NaN
+# 4         5  Catalina             Mérida               NaN      NaN
 # 5         NaN       NaN               NaN       Tijuana      Sur
 ```
 
 ---
 
-## 4. Cuando usar estos parámetros
+## 4. ¿Cuándo usar estos parámetros?
 
 - Usa `how='outer'` cuando necesites conservar todos los registros de ambas tablas.
 - Usa `left_on`/`right_on` cuando las llaves difieran en nombre.
@@ -163,3 +167,17 @@ Como regla práctica, responde:
 - ¿Necesitas el universo completo de registros? -> `how='outer'`.
 - ¿Las llaves comparten nombre? -> usa `on`.
 - ¿Necesitas auditar? -> `indicator=True`.
+
+---
+
+## Errores comunes (específicos a `outer join`)
+
+1. Esperar que no aparezcan `NaN`: `how='outer'` preserva todas las filas; las ausencias aparecen como `NaN` y deben limpiarse o rellenarse.
+
+2. Mezclar tipos en la llave (int vs str): causa no coincidencias; normaliza con `astype()` antes del `merge`.
+
+3. Duplicados en cualquiera de las tablas que multiplican filas: audita con `value_counts()` y decide deduplicar o agregar.
+
+4. Columnas con el mismo nombre en ambas tablas que confunden el resultado: usa `suffixes` o renombra antes.
+
+5. No auditar el resultado tras el outer: usa `indicator=True` y revisa `resultado['_merge'].value_counts()` y `head()`.

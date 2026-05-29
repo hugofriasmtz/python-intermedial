@@ -3,16 +3,16 @@
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 
 > [!NOTE]
-> En este capítulo veremos cómo y por qué unir un `DataFrame` consigo mismo (self-join). Es una técnica útil para resolver relaciones jerárquicas, emparejar filas por diferentes columnas o comparar registros dentro de la misma tabla.
+> "La práctica consistente transforma lo difícil en dominio. Cada línea de código es un paso adelante."
 
----
+En esta lección veremos self-joins (unir una tabla consigo misma) para resolver relaciones internas —p. ej. `referido_por`. Aprenderás a emparejar la tabla consigo misma con `left_on`/`right_on`, evitar ambigüedades con `suffixes` y auditar coincidencias con `indicator=True`.
 
-## Qué haremos
+## ¿Qué haremos?
 
-Trabajaremos con el ejemplo de la biblioteca municipal y con tablas que referencian filas internas (por ejemplo, `referido_por` que apunta a otro `socio_id` en la misma tabla). Aprenderás a:
+Usaremos el ejemplo de la biblioteca municipal con filas que referencian otras filas (por ejemplo, `referido_por` apunta a otro `socio_id`). Aprenderás a:
 
-- Resolver relaciones padre-hijo con `merge()` entre el `DataFrame` y sí mismo.
-- Emparejar filas usando columnas distintas (`left_on` / `right_on`).
+- Resolver relaciones padre-hijo con `merge()` entre dos vistas del mismo `DataFrame`.
+- Emparejar filas usando `left_on` / `right_on` cuando la llave difiere.
 - Controlar nombres duplicados con `suffixes` y auditar coincidencias con `indicator=True`.
 
 > Un self-join usa exactamente las mismas reglas que cualquier `merge()`; la diferencia es conceptual: las dos tablas son la misma fuente de datos.
@@ -26,12 +26,14 @@ Trabajaremos con el ejemplo de la biblioteca municipal y con tablas que referenc
 
 ---
 
-## Qué vas a aprender
+## ¿Qué vas a aprender?
 
 - Qué es un self-join y cuándo aplicarlo.
 - Cómo usar `left_on` / `right_on` cuando unes la tabla consigo misma.
 - Cómo interpretar `_merge` si usas `indicator=True` para auditar.
 - Cómo evitar columnas ambiguas con `suffixes` y cuándo usar índices (`left_index`/`right_index`).
+
+**Documentación:** [Guía — Merge, join y concatenate](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html) — [API: pandas.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html)
 
 ---
 
@@ -100,7 +102,7 @@ resultado = df_socios.merge(
     suffixes=("","_referente")
 )
 print(resultado[["socio_id","nombre","_merge"]])
- 
+
 # Output esperado (columna _merge):
 #    socio_id  nombre    _merge
 # 0         1    Hugo   left_only
@@ -144,7 +146,7 @@ Esto produce columnas como `nombre_emp` y `nombre_referente` para evitar confusi
 
 ---
 
-## 4. Cuando usar estos parámetros
+## 4. ¿Cuándo usar estos parámetros?
 
 - Usa `left_on`/`right_on` cuando las llaves difieran en nombre.
 - Usa `indicator=True` para auditar y detectar filas `left_only`/`right_only`.
@@ -155,3 +157,17 @@ Como regla práctica, responde:
 
 - ¿La llave está en la misma tabla pero con distinto nombre? -> `left_on`/`right_on`.
 - ¿Necesitas auditar? -> `indicator=True`.
+
+---
+
+## Errores comunes (específicos a `self-joins`)
+
+1. Confundir las dos vistas de la misma tabla: asegúrate de que `left_on` y `right_on` referencien las columnas correctas (p. ej. `referido_por` vs `id`).
+
+2. Crear productos cartesianos por llaves no únicas: deduplica o agrega la vista derecha antes del `merge`.
+
+3. Sobrescribir columnas con el mismo nombre: usa `suffixes=('_orig','_ref')` para diferenciarlas.
+
+4. Usar `on` cuando necesitas unir columnas distintas dentro de la misma tabla: emplea `left_on`/`right_on` o `left_index`/`right_index`.
+
+5. No gestionar referencias faltantes (None/NaN): las filas sin referente tendrán `NaN` — trata con `fillna()` o lógica condicional.

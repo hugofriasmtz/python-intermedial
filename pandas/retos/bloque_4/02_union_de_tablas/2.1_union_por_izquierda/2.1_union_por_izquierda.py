@@ -10,7 +10,7 @@ import pandas as pd
 
 
 base_path = Path(__file__).resolve().parents[5]
-csv_path = base_path / "data" / "pandas" / "socios_biblioteca.csv"
+csv_path = base_path / "data" / "pandas" / "bloque_4_union_tablas" / "socios_biblioteca.csv"
 
 df_socios = pd.read_csv(csv_path)
 

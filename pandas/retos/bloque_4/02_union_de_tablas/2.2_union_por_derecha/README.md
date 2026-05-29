@@ -3,17 +3,19 @@
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 
 > [!NOTE]
-> En este capítulo profundizamos en `right join`: conservar todo lo de la tabla derecha y combinar columnas de la izquierda cuando haya coincidencias.
+> "La práctica consistente transforma lo difícil en dominio. Cada línea de código es un paso adelante."
+
+Esta lección explica la unión por derecha (`right join`). Veremos cómo conservar todas las filas de la tabla derecha, interpretar los `NaN` cuando la izquierda no tiene coincidencias, auditar el origen de cada registro con `indicator=True` y usar `suffixes` para evitar ambigüedades en columnas compartidas.
 
 ---
 
-## Qué haremos
+## ¿Qué haremos?
 
 Usaremos el mismo escenario de la biblioteca municipal. La diferencia es que ahora la tabla principal será la derecha: queremos conservar todas las filas de la tabla derecha aunque no tengan pareja en la izquierda.
 
 - **¿Qué pasa si una sede no tiene socio registrado?** -> `how='right'`
-- **¿Y si las llaves se llaman distinto?** -> `left_on` / `right_on`
--- **Cómo auditar la unión?** -> `indicator=True`
+-- **¿Y si la llave tiene distinto nombre?** -> `left_on` / `right_on`
+- **¿Cómo auditar la unión?** -> `indicator=True`
 
 > [!TIP]
 > Aquí el foco es entender el `right join` con casos reales: conservar la tabla principal y manejar llaves/columnas que difieren.
@@ -28,18 +30,20 @@ Usaremos el mismo escenario de la biblioteca municipal. La diferencia es que aho
 
 ---
 
-## Qué vas a aprender
+## ¿Qué vas a aprender?
 
 - Qué significa exactamente `how='right'`.
 - Cómo usar `left_on`/`right_on` cuando las columnas llave difieren.
 - Cómo interpretar `_merge` con `indicator=True`.
 - Qué ocurre cuando hay duplicados de llave en cualquiera de las tablas.
 
+**Documentación:** [Guía — Merge, join y concatenate](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html) — [API: pandas.merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html)
+
 ---
 
 ## 1. Unir columnas con nombres distintos
 
-A veces la clave no se llama igual en ambas tablas.
+A veces la llave no se llama igual en ambas tablas.
 
 Vamos a trabajar con una biblioteca municipal donde tenemos socios y lectores asignados a diferentes sedes.
 
@@ -62,7 +66,7 @@ import pandas as pd
 df_socios = pd.DataFrame({
     "socio_id": [1, 2, 3, 4, 5],
     "nombre": ["Hugo", "Karen", "Marcos", "Felipe", "Catalina"],
-    "ciudad": ["Ciudad de Mexico", "Guadalajara", "Monterrey", "Tijuana", "Merida"]
+    "ciudad": ["Ciudad de México", "Guadalajara", "Monterrey", "Tijuana", "Mérida"]
 })
 
 df_sedes = pd.DataFrame({
@@ -80,7 +84,7 @@ resultado = df_socios.merge(
 print(resultado)
 # Output esperado:
 #    socio_id  nombre             ciudad  id_socio    sede
-# 0       1.0    Hugo  Ciudad de Mexico        1   Centro
+# 0       1.0    Hugo  Ciudad de México        1   Centro
 # 1       2.0   Karen       Guadalajara        2    Norte
 # 2       4.0  Felipe           Tijuana        4      Sur
 # 3       NaN     NaN               NaN        6  Oriente
@@ -109,7 +113,7 @@ resultado = df_socios.merge(
 print(resultado)
 # Output esperado (columna _merge):
 #    socio_id  nombre             ciudad  id_socio    sede     _merge
-# 0       1.0    Hugo  Ciudad de Mexico        1   Centro      both
+# 0       1.0    Hugo  Ciudad de México        1   Centro      both
 # 1       2.0   Karen       Guadalajara        2    Norte      both
 # 2       4.0  Felipe           Tijuana        4      Sur      both
 # 3       NaN     NaN               NaN        6  Oriente  right_only
@@ -134,7 +138,7 @@ En este ejemplo ambas tablas tienen una columna llamada `ciudad`.
 ```python
 df_sucursales = pd.DataFrame({
     "socio_id": [1, 2, 4],
-    "ciudad": ["Ciudad de Mexico", "Guadalajara", "Tijuana"],
+    "ciudad": ["Ciudad de México", "Guadalajara", "Tijuana"],
     "area": ["Centro", "Norte", "Sur"]
 })
 
@@ -147,7 +151,7 @@ resultado = df_socios.merge(
 print(resultado)
 # Output:
 #    socio_id    nombre   ciudad_socio   ciudad_sucursal    area
-# 0         1      Hugo  Ciudad de Mexico  Ciudad de Mexico  Centro
+# 0         1      Hugo  Ciudad de México  Ciudad de México  Centro
 # 1         2     Karen       Guadalajara       Guadalajara   Norte
 # 2         3    Marcos         Monterrey               NaN      NaN
 # 3         4    Felipe           Tijuana           Tijuana     Sur
@@ -159,7 +163,7 @@ Si no usas `suffixes`, pandas te deja nombres ambiguos y luego cuesta leer el re
 
 ---
 
-## 4. Cuando usar estos parámetros
+## 4. ¿Cuándo usar estos parámetros?
 
 - Usa `how='right'` cuando quieras conservar la tabla principal (derecha).
 - Usa `left_on` y `right_on` cuando las llaves tienen nombres distintos.
@@ -172,3 +176,17 @@ Como regla práctica, empieza por responder estas preguntas:
 - ¿Quiero conservar todas las filas de la derecha?
 - ¿Necesito saber de dónde salió cada fila?
 - ¿Hay columnas repetidas que deban diferenciarse?
+
+---
+
+## Errores comunes (específicos a `right join`)
+
+1. Confundir `right` con `left`/`inner`: `how='right'` conserva la tabla derecha; revisa `_merge` si esperabas otro comportamiento.
+
+2. Esperar columnas de la izquierda sin `NaN`: las filas derechas sin pareja tendrán columnas izquierdas `NaN` — maneja con `fillna()` si es necesario.
+
+3. Invertir `left_on`/`right_on`: asegúrate de que `right_on` apunte a la columna de la tabla derecha.
+
+4. Duplicados en la izquierda que replican filas derechas: si la izquierda tiene varias coincidencias por llave, la derecha se repetirá; deduplica o agrega la izquierda antes.
+
+5. Olvidar `suffixes` con columnas iguales: usa `suffixes=('_izq','_der')` o renombra para evitar ambigüedad.

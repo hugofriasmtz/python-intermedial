@@ -15,22 +15,12 @@ import pandas as pd
 
 
 base_path = Path(__file__).resolve().parents[4]
-csv_path = base_path / "data" / "pandas" / "socios_biblioteca.csv"
+data_path = base_path / "data" / "pandas" / "bloque_4_union_tablas"
+csv_socios_path = data_path / "socios_biblioteca.csv"
+csv_prestamos_path = data_path / "prestamos_biblioteca.csv"
 
-socios = pd.read_csv(csv_path)
-
-prestamos = pd.DataFrame(
-    {
-        "id": [1, 2, 4, 6],
-        "libro": [
-            "Cien anios de soledad",
-            "La ciudad y los perros",
-            "Rayuela",
-            "El principito",
-        ],
-        "dias_prestamo": [7, 14, 10, 5],
-    }
-)
+socios = pd.read_csv(csv_socios_path)
+prestamos = pd.read_csv(csv_prestamos_path)
 
 merge_inner = socios.merge(prestamos, on="id", how="inner")
 

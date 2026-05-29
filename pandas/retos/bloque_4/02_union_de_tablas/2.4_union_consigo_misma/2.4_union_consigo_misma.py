@@ -10,13 +10,13 @@ import pandas as pd
 
 
 base_path = Path(__file__).resolve().parents[5]
-csv_path = base_path / "data" / "pandas" / "socios_biblioteca.csv"
+csv_path = base_path / "data" / "pandas" / "bloque_4_union_tablas" / "socios_biblioteca.csv"
 
 df_socios = pd.read_csv(csv_path)
 
 df_socios["referido_por"] = [None, 1, 1, 2, 2, 3, 4]
 
-df_referentes = df_socios.rename(
+df_referentes = df_socios.drop(columns=["referido_por"]).rename(
     columns={
         "id": "id_referente",
         "nombre": "nombre_referente",
