@@ -23,11 +23,11 @@ Estos pasos son **esenciales** antes de cualquier análisis.
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Usar `pd.read_csv()`.
 - Revisar las primeras filas con `head()`.
-- Entender por que un DataFrame es la base del analisis.
+- Entender por qué un DataFrame es la base del análisis.
 
 ---
 
@@ -39,7 +39,7 @@ import pandas as pd
 df = pd.read_csv("data/pandas/jugadores_futbol.csv")
 ```
 
-### Por que importa
+### ¿Por qué importa?
 
 - Sin DataFrame no hay analisis.
 - Cargar bien el archivo evita errores posteriores.
@@ -53,14 +53,14 @@ print(df.head())
 print(df.shape)
 ```
 
-### Que te dice
+### ¿Qué te dice?
 
 - `head()`: como se ve la tabla.
 - `shape`: cuantas filas y columnas hay.
 
 ---
 
-## 3. Mini practica
+## 3. Mini práctica
 
 Carga el CSV, imprime `head()` y `shape`, y verifica que las columnas esperadas existan.
 

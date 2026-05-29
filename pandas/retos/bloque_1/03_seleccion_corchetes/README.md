@@ -21,7 +21,7 @@ Practicaremos **extraer datos específicos** de un DataFrame respondiendo pregun
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué una columna devuelve una `Series` pero varias devuelven un `DataFrame`.
 - La diferencia crítica: `.loc` usa etiquetas, `.iloc` usa posiciones.
@@ -71,13 +71,13 @@ print(df[["nombre", "puesto", "salario"]])
 # 5 Catalina     Ama de casa       3100
 ```
 
-### Cuándo usarlo
+### ¿Cuándo usarlo?
 
 - Cuando quieres columnas específicas.
 - Cuando quieres reducir ruido.
 - Cuando necesitas una sola columna como `Series`.
 
-### Qué devuelve
+### ¿Qué devuelve?
 
 - `df["nombre"]` devuelve una columna individual (tipo `Series`).
 - `df[["nombre", "puesto", "salario"]]` devuelve una tabla con esas columnas (tipo `DataFrame`).
@@ -134,7 +134,7 @@ print(df.iloc[1:3])
 
 ---
 
-## 3. Mini practica
+## 3. Mini práctica
 
 - Selecciona una columna.
 - Selecciona 3 columnas.

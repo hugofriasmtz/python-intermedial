@@ -17,7 +17,7 @@ Responderemos estas preguntas de forma secuencial:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Cuándo `.copy()` es obligatorio y por qué (SettingWithCopyWarning).
 - Cómo las métricas derivadas responden preguntas que los datos originales no pueden.
@@ -54,7 +54,7 @@ print(empleados_senior)
 
 > [!WARNING] Si omites `.copy()`, podrías modificar `subset` sin querer, lo que a su vez modifica `df` debido a que `subset` es una vista, no una copia independiente.
 
-### Por qué usar `copy()`
+### ¿Por qué usar `copy()`?
 
 - Evita advertencias.
 - Deja claro que trabajas sobre una copia.
@@ -75,7 +75,7 @@ print(empleados_senior)
 # 5  Catalina      RH          3100        7                 1085.0
 ```
 
-### Para qué sirve
+### ¿Para qué sirve?
 
 - Combinar columnas existentes para crear nuevas métricas.
 - Crear una columna más útil que las originales.
@@ -95,8 +95,22 @@ print(empleados_senior.sort_values(by="bono_anual", ascending=False))
 # 5  Catalina         RH     3100                 7       1085.0
 ```
 
-### Para qué sirve ordenar
+### ¿Para qué sirve ordenar?
 
 - Ver los valores más altos o más bajos.
 - Responder preguntas como "¿quién tiene el bono más alto?"
 - Preparar datos para ranking o comparaciones.
+
+---
+
+## 4. Mini práctica
+
+Crea la columna `bono_anual` en el subconjunto de empleados senior y ordénalos por esa columna.
+
+---
+
+## Errores comunes
+
+- Usar asignación en vista en lugar de copia (causa `SettingWithCopyWarning`).
+- No verificar la existencia de columnas antes de crear métricas.
+- Olvidar resetear índices tras filtrar si dependes de posiciones.

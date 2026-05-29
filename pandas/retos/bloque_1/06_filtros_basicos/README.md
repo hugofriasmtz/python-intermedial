@@ -20,7 +20,7 @@ Responderemos preguntas usando filtros:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué `&` (AND) requiere TODAS las condiciones verdaderas y `|` (OR) requiere al menos UNA.
 - Cuándo los paréntesis alrededor de cada condición son obligatorios (precedencia de operadores).
@@ -49,9 +49,9 @@ print(df[df["salario"] > 3500])
 # 2   Marcos         Backend         3800         Santiago      3
 ```
 
-### Cuándo usarlo
+### ¿Cuándo usarlo?
 
-- Cuando quieres solo filas que cumplen una condición.
+- ¿Cuándo quieres solo filas que cumplen una condición?
 - Para responder preguntas como "¿quién gana más de...?"
 
 ---
@@ -79,6 +79,14 @@ print(df[(df["ciudad"] == "Bogotá") & (df["años_experiencia"] > 5)])
 
 ---
 
-## 3. Mini practica
+## 3. Mini práctica
 
 Filtra jugadores titulares con valor alto y ordénalos por `valor_millones`.
+
+---
+
+## Errores comunes
+
+- Revisar que las listas tengan la misma longitud al crear DataFrames.
+- Verificar nombres de columnas antes de operaciones con `merge` o `groupby`.
+- Inspeccionar datos con `head()` tras transformaciones.

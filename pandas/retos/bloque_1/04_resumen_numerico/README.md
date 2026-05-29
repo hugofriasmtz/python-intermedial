@@ -25,7 +25,7 @@ Estas preguntas te revelan patrones, anomalías y problemas sin ver todas las fi
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Cuándo usar `mean()` vs `median()`
 - Por qué `count()` es diferente a `len()`
@@ -69,7 +69,7 @@ print(df["salario"].max())
 # Output: 4500
 ```
 
-### Para qué sirve el resumen rápido
+### ¿Para qué sirve el resumen rápido?
 
 - Ver valores centrales.
 - Detectar extremos (salario mínimo y máximo).
@@ -95,7 +95,7 @@ print(df["ciudad"].unique())
 # Output: ['Bogotá' 'Ciudad de México' 'Santiago' 'Medellín' 'La Paz' 'Caracas']
 ```
 
-### Para qué sirven los conteos
+### ¿Para qué sirven los conteos?
 
 - Saber cuántos datos válidos tienes (excluyendo nulos).
 - Saber cuántos valores distintos hay (para detectar repeticiones o variedad).
@@ -103,6 +103,14 @@ print(df["ciudad"].unique())
 
 ---
 
-## 3. Mini practica
+## 3. Mini práctica
 
 Compara media y mediana de `goles`. Si son muy distintas, la columna puede estar sesgada.
+
+---
+
+## Errores comunes
+
+- Revisar que las listas tengan la misma longitud al crear DataFrames.
+- Verificar nombres de columnas antes de operaciones con `merge` o `groupby`.
+- Inspeccionar datos con `head()` tras transformaciones.

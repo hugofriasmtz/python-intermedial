@@ -17,7 +17,7 @@ Responderemos 3 preguntas prácticas:
 
 ---
 
-## Que es un DataFrame
+## ¿Qué es un DataFrame?
 
 Un **DataFrame** es una tabla bidimensional (filas y columnas) que organiza datos de forma estructurada. Es la estructura principal de `pandas` para trabajar con datos.
 
@@ -48,7 +48,7 @@ Todo DataFrame tiene:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué una lista de diccionarios difiere de un diccionario de listas (pero producen el mismo resultado).
 - Cuándo es mejor crear datos en Python vs cargarlos desde archivo.
@@ -103,13 +103,13 @@ df = pd.DataFrame(datos)
 # 2 Marcos         Backend     3800
 ```
 
-### Como se interpreta la estructura
+### ¿Cómo se interpreta la estructura?
 
 - En la lista de diccionarios, pandas lee cada diccionario como una fila.
 - En el diccionario de listas, pandas arma filas usando la posicion de cada valor.
 - Todas las listas deben tener el mismo largo.
 
-### Para que sirve crear DataFrames
+### ¿Para qué sirve crear DataFrames?
 
 - Construir tablas desde cero.
 - Entender como se forma una tabla en pandas.
@@ -133,7 +133,7 @@ print(df.head())
 > [!TIP]
 > Usa `Path(__file__).resolve().parents[...]` para rutas portables.
 
-### Para que sirve leer CSV
+### ¿Para qué sirve leer CSV?
 
 - Trabajar con datos reales.
 - Evitar escribir tablas a mano.
@@ -155,7 +155,7 @@ df = pd.read_csv("data/pandas/jugadores_futbol.csv")
 df.to_csv("data/pandas/copia_jugadores.csv", index=False)
 ```
 
-### Para que sirve escribir CSV
+### ¿Para qué sirve escribir CSV?
 
 - Guardar resultados.
 - Compartir tablas con otras personas.
@@ -163,9 +163,9 @@ df.to_csv("data/pandas/copia_jugadores.csv", index=False)
 
 ---
 
-## 4. Mini practica
+## 4. Mini práctica
 
-Crea un DataFrame con nombre, edad y pais. Luego guardalo en CSV y vuelve a leerlo.
+Crea un DataFrame con nombre, edad y país. Luego guárdalo en CSV y vuelve a leerlo.
 
 ---
 

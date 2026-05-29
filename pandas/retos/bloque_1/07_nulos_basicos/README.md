@@ -20,7 +20,7 @@ Responderemos estas preguntas sobre datos faltantes:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué ignorar nulos causa errores silenciosos (cálculos incorrectos).
 - Cuándo es mejor eliminar filas vs rellenar (imputar) valores.
@@ -52,7 +52,7 @@ print(df.isna().sum())
 # años_experiencia        0
 ```
 
-### Para qué sirve contar nulos
+### ¿Para qué sirve contar nulos?
 
 - Saber qué columnas necesitan limpieza.
 - Detectar problemas en la calidad de datos rápidamente.
@@ -75,7 +75,7 @@ print((df.isna().mean() * 100).round(2))
 # años_experiencia       0.00
 ```
 
-### Para qué sirve el porcentaje de nulos
+### ¿Para qué sirve el porcentaje de nulos?
 
 - Entender qué tan grave es la falta de datos.
 - Decidir si es mejor eliminar una columna o llenarla.
@@ -85,6 +85,14 @@ print((df.isna().mean() * 100).round(2))
 
 ---
 
-## 3. Mini practica
+## 3. Mini práctica
 
 Identifica las columnas con nulos y piensa si conviene llenar, eliminar o dejar esos datos.
+
+---
+
+## Errores comunes
+
+- Revisar que las listas tengan la misma longitud al crear DataFrames.
+- Verificar nombres de columnas antes de operaciones con `merge` o `groupby`.
+- Inspeccionar datos con `head()` tras transformaciones.

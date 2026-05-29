@@ -22,7 +22,7 @@ Responderemos estas preguntas sobre el DataFrame recién cargado:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué revisar estructura ANTES de analizar evita errores.
 - Cómo identificar columnas problemáticas (tipo incorrecto, muchos nulos).
@@ -64,7 +64,7 @@ print(df.dtypes)
 # años_experiencia      int64
 ```
 
-### Para qué sirve revisar estructura
+### ¿Para qué sirve revisar estructura?
 
 - Saber cuántas filas y columnas hay (`shape`).
 - Ver los nombres de las columnas (`columns`).
@@ -98,7 +98,7 @@ print((df.isna().mean() * 100).round(2))
 # años_experiencia    0.0
 ```
 
-### Para qué sirve contar nulos
+### ¿Para qué sirve contar nulos?
 
 - Detectar columnas incompletas.
 - Saber si hace falta limpieza.
@@ -108,13 +108,13 @@ print((df.isna().mean() * 100).round(2))
 
 ---
 
-## 3. Mini practica
+## 3. Mini práctica
 
 Carga el CSV y responde:
 
-- Cuantas filas y columnas tiene?
-- Que columnas son numericas?
-- Hay nulos?
+- ¿Cuántas filas y columnas tiene?
+- ¿Qué columnas son numéricas?
+- ¿Hay nulos?
 
 ---
 
