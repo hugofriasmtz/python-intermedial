@@ -23,12 +23,14 @@ Practicaremos **calcular acumulaciones** con pedidos e ingresos de una tienda en
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Casos de uso para cada función acumulada.
 - Cómo interpretar resultados acumulados.
 - Cuándo usar acumulados por grupo.
 - Cómo leer un producto acumulado.
+
+**Documentación:** [cumsum](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.cumsum.html), [cummax](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.cummax.html), [cummin](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.cummin.html) y [cumprod](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.cumprod.html)
 
 ---
 

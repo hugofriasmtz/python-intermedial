@@ -23,12 +23,14 @@ Practicaremos **calcular medidas de tendencia central** usando datos de una tien
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Diferencia entre media, mediana y moda.
 - Cuándo cada una es más útil.
 - Cómo usar percentiles para entender la distribución.
 - Por qué `describe()` es tu mejor amigo para exploración rápida.
+
+**Documentación:** [mean](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.mean.html), [median](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.median.html), [mode](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.mode.html), [quantile](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.quantile.html) y [describe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.describe.html)
 
 ---
 
@@ -75,7 +77,7 @@ print(df["precio"].describe())
 # max     1200.000000
 ```
 
-### Cuándo usar media y mediana
+### ¿Cuándo usar media y mediana?
 
 - **Media**: cuando los precios no tienen extremos muy altos.
 - **Mediana**: cuando hay productos muy caros que distorsionan el promedio.
@@ -100,7 +102,7 @@ print(f"75% percentil: {q3}")
 print(f"99% percentil: {p99}")
 ```
 
-### Cuándo usar percentiles
+### ¿Cuándo usar percentiles?
 
 - Para ubicar un precio dentro del resto del catálogo.
 - Para comparar una tienda con otra usando cortes similares.
@@ -113,7 +115,7 @@ print(f"99% percentil: {p99}")
 print(df["precio"].describe())
 ```
 
-### Cuándo usar describe
+### ¿Cuándo usar describe?
 
 - Para ver media, desviación, mínimo, cuartiles y máximo en una sola línea.
 - Para explorar rápidamente una columna numérica.
@@ -130,7 +132,7 @@ print(df.groupby("categoria")["precio"].mean())
 print(df.groupby("ciudad")["precio"].describe())
 ```
 
-### Cuándo usar por grupos
+### ¿Cuándo usar por grupos?
 
 - Para comparar precios medios por categoría.
 - Para resumir precios por ciudad o canal de venta.

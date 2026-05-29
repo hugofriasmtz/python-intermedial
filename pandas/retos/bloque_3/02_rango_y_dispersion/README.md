@@ -23,12 +23,14 @@ Practicaremos **medir la dispersión de datos** con precios y stock de una tiend
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Diferencia entre varianza y desviación estándar.
 - Cómo usar IQR para detectar outliers.
 - Cuándo la dispersión es importante para tu análisis.
 - Cómo comparar dispersión entre grupos.
+
+**Documentación:** [std](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.std.html), [var](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.var.html), [quantile](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.quantile.html), [max](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.max.html) y [min](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.min.html)
 
 ---
 
@@ -94,7 +96,7 @@ print(outliers)
 # 0  Laptop    1200    12   Tecnología
 ```
 
-### Cuándo usar IQR
+### ¿Cuándo usar IQR?
 
 - Para detectar precios fuera de rango.
 - Para datos asimétricos o con extremos muy altos.
@@ -119,7 +121,7 @@ print(round(cv_stock, 1))
 # Output: 76.2
 ```
 
-### Cuándo usar coeficiente de variación
+### ¿Cuándo usar coeficiente de variación?
 
 - Para comparar columnas con escalas distintas.
 - Para saber cuál variable es más irregular proporcionalmente.
@@ -147,7 +149,7 @@ print(df.groupby("categoria")["stock"].var())
 # Tecnología    5798.0...
 ```
 
-### Cuándo usar por grupos
+### ¿Cuándo usar por grupos?
 
 - Para comparar variación por categoría.
 - Para descubrir qué grupo tiene precios más inestables.

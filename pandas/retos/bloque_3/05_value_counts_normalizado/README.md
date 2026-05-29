@@ -22,12 +22,14 @@ Practicaremos **calcular proporciones y porcentajes** en una tienda en línea:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Diferencia entre conteos absolutos y proporciones.
 - Cuándo normalizar es más informativo que contar.
 - Cómo formatear porcentajes de forma legible.
 - Cómo comparar distribuciones entre grupos.
+
+**Documentación:** [value_counts](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html)
 
 ---
 
@@ -56,7 +58,7 @@ print((df["categoria"].value_counts(normalize=True) * 100).round(1))
 # Hogar         16.7
 ```
 
-### Cuándo usar conteos y porcentajes
+### ¿Cuándo usar conteos y porcentajes?
 
 - Para comparar categorías sin depender del tamaño total.
 - Para ver qué tanto representa cada grupo.
@@ -81,7 +83,7 @@ print(resultado)
 # Centro         1        16.7
 ```
 
-### Cuándo usar filtro por proporción
+### ¿Cuándo usar filtro por proporción?
 
 - Para presentar conteos y porcentajes en la misma tabla.
 - Para reportes rápidos de distribución.
@@ -99,13 +101,13 @@ print(valores_significativos)
 # Hogar         0.166667
 ```
 
-### Cuándo usar comparación entre grupos
+### ¿Cuándo usar comparación entre grupos?
 
 - Para quedarte solo con las categorías que realmente pesan.
 
 ---
 
-## 4. Comparar distribuciones entre grupos
+## 4. ¿Comparar distribuciones entre grupos?
 
 > [!NOTE]
 > `groupby(...).value_counts(normalize=True)` te deja comparar regiones como porcentajes, no solo como totales.
@@ -117,7 +119,7 @@ print(resultado)
 # Output: tabla cruzada con porcentajes por región
 ```
 
-### Cuándo usarlo
+### ¿Cuándo usarlo?
 
 - Para comparar cómo se reparte una categoría entre regiones.
 

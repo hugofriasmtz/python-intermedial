@@ -23,12 +23,14 @@ Practicaremos **contar frecuencias de valores** en una tienda en línea:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Cómo `value_counts()` resume categorías.
 - Cuándo usar `dropna=False` para incluir nulos.
 - Cómo combinar `value_counts()` con filtros.
 - Por qué `value_counts()` es mejor que `groupby().count()` para este caso.
+
+**Documentación:** [value_counts](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html)
 
 ---
 
@@ -87,7 +89,7 @@ print(f"Categoría más frecuente: {mas_frecuente}")
 
 ### Cuándo usar nulos
 
-- Cuando te importan solo las categorías más repetidas.
+- ¿Cuándo te importan solo las categorías más repetidas?
 - Para mostrar rankings rápidos.
 
 ---
@@ -108,8 +110,8 @@ print(df_con_nulos["ciudad"].value_counts(dropna=False))
 
 ### Cuándo usar ordenamiento personalizado
 
-- Cuando necesitas auditar datos faltantes.
-- Cuando no quieres ocultar valores nulos en el conteo.
+- ¿Cuándo necesitas auditar datos faltantes?
+- ¿Cuándo no quieres ocultar valores nulos en el conteo?
 
 ---
 
@@ -125,8 +127,8 @@ print(df["ciudad"].value_counts().sort_index())
 
 ### Cuándo usarlo
 
-- Cuando quieres ver categorías menos frecuentes primero.
-- Cuando prefieres ordenar alfabéticamente.
+- ¿Cuándo quieres ver categorías menos frecuentes primero?
+- ¿Cuándo prefieres ordenar alfabéticamente?
 
 ---
 

@@ -22,12 +22,14 @@ Practicaremos **eliminar filas duplicadas** en el catálogo de una tienda en lí
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Diferencia entre filas duplicadas y valores duplicados en una columna.
 - Cuándo mantener la primera vs última ocurrencia.
 - Cómo detectar duplicados sin eliminarlos.
 - Cuándo necesitas eliminar duplicados.
+
+**Documentación:** [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html) y [duplicated](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html)
 
 ---
 
@@ -62,7 +64,7 @@ print(df_limpio)
 
 ### Cuándo usar registros únicos
 
-- Cuando tienes registros repetidos idénticos.
+- ¿Cuándo tienes registros repetidos idénticos?
 
 ---
 
@@ -80,7 +82,7 @@ print(f"Productos únicos: {len(df_productos)}")
 
 ### Cuándo usar última ocurrencia
 
-- Cuando quieres conservar un registro por producto.
+- ¿Cuándo quieres conservar un registro por producto?
 
 ---
 
@@ -94,7 +96,7 @@ print(df_ultima)
 
 ### Cuándo usar auditoría previa
 
-- Cuando el último registro es el que te interesa conservar.
+- ¿Cuándo el último registro es el que te interesa conservar?
 
 ---
 
@@ -113,7 +115,7 @@ print(f"Total duplicados: {duplicados.sum()}")
 
 ### Cuándo usar columnas múltiples
 
-- Cuando primero quieres auditar los duplicados antes de borrarlos.
+- ¿Cuándo primero quieres auditar los duplicados antes de borrarlos?
 
 ---
 
@@ -127,7 +129,7 @@ print(df_por_combo)
 
 ### Cuándo usarlo
 
-- Cuando la unicidad depende de más de una columna.
+- ¿Cuándo la unicidad depende de más de una columna?
 
 ---
 

@@ -22,12 +22,14 @@ Practicaremos **eliminar duplicados basándonos en múltiples columnas** usando 
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Cómo deduplicar por combinaciones de columnas.
 - Cuándo es útil deduplicar por múltiples criterios.
 - Cómo interpretar qué fila se mantiene y por qué.
 - Cómo combinar deduplicación con análisis posterior.
+
+**Documentación:** [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html), [value_counts](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html) y [idxmax](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.idxmax.html)
 
 ---
 
@@ -56,7 +58,7 @@ print(df.drop_duplicates(subset=["producto", "ciudad"], keep="first"))
 
 ### Cuándo usar última ocurrencia
 
-- Cuando un producto puede repetirse en distintas ciudades.
+- ¿Cuándo un producto puede repetirse en distintas ciudades?
 
 ---
 
@@ -69,7 +71,7 @@ print(df.drop_duplicates(subset=["producto", "ciudad"], keep="last"))
 
 ### Cuándo usar combinaciones repetidas
 
-- Cuando el último registro contiene la versión más reciente.
+- ¿Cuándo el último registro contiene la versión más reciente?
 
 ---
 
@@ -108,7 +110,7 @@ print(df_mejor)
 
 ### Cuándo usarlo
 
-- Cuando quieres quedarte con el mayor precio, la mejor calificación o el valor más relevante.
+- ¿Cuándo quieres quedarte con el mayor precio, la mejor calificación o el valor más relevante?
 
 ---
 
