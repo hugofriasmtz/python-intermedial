@@ -20,12 +20,14 @@ Practicaremos **agrupar por múltiples columnas** para responder preguntas más 
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Cómo interpretar un resultado agrupado por dos columnas.
 - Por qué el orden de columnas en `groupby()` cambia la estructura del resultado.
 - Cuándo necesitas aplanar un resultado jerárquico.
 - Cómo nombrar filas y columnas en resultados complejos.
+
+**Documentación:** [groupby](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), [agg](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.agg.html) y [reset_index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html)
 
 ---
 

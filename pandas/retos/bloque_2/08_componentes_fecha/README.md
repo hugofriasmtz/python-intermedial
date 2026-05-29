@@ -21,12 +21,14 @@ Practicaremos **extraer componentes de fechas** para análisis temporal detallad
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Todos los extractores disponibles en `.dt`.
 - Cómo filtrar y agrupar usando componentes de fechas.
 - Cómo calcular diferencias entre fechas (duración).
 - Cuándo usar `.dt` vs `.astype(str)`.
+
+**Documentación:** [Series.dt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.html), [to_datetime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html) y [day_name](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.day_name.html)
 
 ---
 

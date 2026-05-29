@@ -20,12 +20,14 @@ Practicaremos **combinar dos DataFrames** respondiendo preguntas que requieren d
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Los cuatro tipos de join: inner, left, right, outer.
 - Cómo elegir el tipo de join según tu pregunta.
 - Por qué `.left_on` y `.right_on` existen (cuando las columnas tienen nombres diferentes).
 - Cómo detectar y manejar duplicados tras un merge.
+
+**Documentación:** [merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html)
 
 ---
 
@@ -60,7 +62,7 @@ print(result)
 # 2   4  Erwin           Arquitectura       3.9   400
 ```
 
-### Cuándo usarlo
+### ¿Cuándo usarlo?
 
 - Quieres solo datos completos de ambas tablas.
 - Quieres eliminar estudiantes sin información coincidente.
@@ -85,7 +87,7 @@ print(result)
 # 5   6  Catalina                Derecho       4.0    NaN
 ```
 
-### Cuándo usar left join
+### ¿Cuándo usar left join?
 
 - Quieres mantener todas las filas de la tabla principal.
 - Está bien si algunos valores en las nuevas columnas son `NaN`.

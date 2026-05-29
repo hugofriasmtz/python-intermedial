@@ -21,12 +21,14 @@ Practicaremos **agrupar datos y resumirlos** respondiendo preguntas académicas:
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué `groupby()` es más eficiente que bucles manuales.
 - Funciones de agregación: `sum()`, `mean()`, `count()`, `max()`, `min()`.
 - Cuándo usar `size()` vs `count()` para contar grupos.
 - Cómo darle un nombre a la columna resultante.
+
+**Documentación:** [groupby](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), [agg](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.groupby.DataFrameGroupBy.agg.html) y [reset_index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html)
 
 ---
 
@@ -67,7 +69,7 @@ print(df.groupby("ciudad").size())
 # (resultado: 1 estudiante por ciudad)
 ```
 
-### Funciones de agregación comunes
+### ¿Funciones de agregación comunes?
 
 - `sum()`: suma total.
 - `mean()`: promedio.

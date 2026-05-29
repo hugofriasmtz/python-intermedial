@@ -21,12 +21,14 @@ Practicaremos **ordenar datos y extraer los mejores (o peores)** usando un DataF
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué `sort_values()` es más eficiente que ordenar con bucles.
 - Cuándo usar `head()` vs `tail()` vs `nlargest()` / `nsmallest()`.
 - Cómo preservar o resetear el índice tras ordenar.
 - Cuándo ordenar por múltiples criterios es esencial.
+
+**Documentación:** [sort_values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html), [head](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html) y [nlargest](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.nlargest.html)
 
 ---
 
@@ -61,7 +63,7 @@ print(df.sort_values("promedio", ascending=False))
 # Output: Felipe primero, luego Hugo y Marcos
 ```
 
-### Cuándo usarlo
+### ¿Cuándo usarlo?
 
 - Ranking de promedios académicos.
 - Estudiantes por semestre o ciudad.
@@ -122,7 +124,7 @@ print(df.sort_values(["ciudad", "promedio"], ascending=[True, False]))
 
 ---
 
-## 4. Preservar o resetear índice
+## 4. ¿Preservar o resetear índice?
 
 Cuando ordenas, los índices se mantienen. A veces es útil limpiar esto.
 

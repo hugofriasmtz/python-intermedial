@@ -20,12 +20,14 @@ Practicaremos **crear tablas cruzadas (pivot tables)** para responder preguntas 
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Estructura básica de pivot_table: índices (filas), columnas, valores, función de agregación.
 - Cuándo usar `pivot_table()` en lugar de `groupby()`.
 - Cómo manejar múltiples agregaciones en una sola tabla.
 - Cómo tratar datos faltantes en tablas cruzadas.
+
+**Documentación:** [pivot_table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html)
 
 ---
 

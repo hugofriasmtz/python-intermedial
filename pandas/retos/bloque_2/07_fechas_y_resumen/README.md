@@ -20,12 +20,14 @@ Practicaremos **trabajar con fechas y agrupar datos temporales** respondiendo pr
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Cómo pandas interpreta fechas en diferentes formatos.
 - La diferencia entre `Timestamp` y `Period`.
 - Cómo agrupar datos por períodos de tiempo.
 - Cuándo usar `resample()` vs `to_period() + groupby()`.
+
+**Documentación:** [to_datetime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html), [to_period](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.to_period.html) y [resample](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html)
 
 ---
 

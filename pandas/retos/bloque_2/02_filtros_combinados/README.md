@@ -21,12 +21,14 @@ Practicaremos **crear filtros más complejos** respondiendo preguntas del mundo 
 
 ---
 
-## Que vas a aprender
+## ¿Qué vas a aprender?
 
 - Por qué `isin()` es más legible que múltiples condiciones OR.
 - Cuándo usar `.str.contains()` para filtros de texto.
 - Cómo combinar filtros sin caer en errores de precedencia.
 - La negación (`~`) para obtener lo opuesto a un filtro.
+
+**Documentación:** [isin](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html), [str.contains](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.contains.html) y operadores lógicos con Series booleanas
 
 ---
 
@@ -53,7 +55,7 @@ print(df[df["ciudad"].isin(["Bogotá", "Santiago"])])
 # 2 Marcos              Psicología       4.5    Santiago         5
 ```
 
-### Cuándo usarlo
+### ¿Cuándo usarlo?
 
 - Cuando necesitas verificar si un valor está en una lista.
 - Mucho más legible que múltiples OR.
