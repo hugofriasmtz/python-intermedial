@@ -20,11 +20,6 @@ Partiremos de una tabla sencilla y la convertiremos en un DataFrame indexado. De
 
 > [!TIP]
 > Si el índice queda limpio desde el inicio, las uniones por índice después son más simples y menos propensas a errores.
-
-### Idea visual
-
-![Diagrama de indice en pandas](https://pandas.pydata.org/docs/_images/02_04.svg)
-
 > [!IMPORTANT]
 > Un índice no es solo una etiqueta visual: pandas lo usa para localizar, alinear y combinar filas.
 
