@@ -21,10 +21,7 @@ Tomaremos dos tablas indexadas por la misma llave y las combinaremos con `join()
 > [!TIP]
 > Si ambas tablas ya comparten el índice, `join()` suele ser la forma más directa de combinarlas.
 
-### Idea visual
-
-![Diagrama de union por izquierda](https://static.pingcap.com/files/2024/05/23092316/left-outer-join.png)
-
+Tip:
 > [!IMPORTANT]
 > Cuando la llave vive en el índice, la alineación de filas importa tanto como el contenido de las columnas.
 
