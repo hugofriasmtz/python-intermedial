@@ -21,10 +21,6 @@ Tomaremos dos tablas indexadas y las uniremos con `pd.merge(..., left_index=True
 > [!TIP]
 > Si necesitas más control sobre la unión que con `join()`, `merge()` por índice es la opción más explícita.
 
-### Idea visual
-
-![Diagrama de union por izquierda](https://static.pingcap.com/files/2024/05/23092316/left-outer-join.png)
-
 > [!IMPORTANT]
 > Cuando ambas tablas están indexadas, el valor del índice determina si las filas se alinean o quedan fuera del resultado.
 

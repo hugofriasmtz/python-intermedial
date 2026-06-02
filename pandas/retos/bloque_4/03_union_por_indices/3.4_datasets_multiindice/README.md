@@ -21,10 +21,6 @@ Tomaremos una tabla con más de una llave natural y la convertiremos en un `Mult
 > [!TIP]
 > Cuando una sola llave no alcanza, un `MultiIndex` organiza mejor la información y prepara la tabla para uniones más precisas.
 
-### Idea visual
-
-![Diagrama de indice en pandas](https://pandas.pydata.org/docs/_images/02_04.svg)
-
 > [!IMPORTANT]
 > En un `MultiIndex`, el orden de los niveles importa tanto como los nombres de las columnas originales.
 

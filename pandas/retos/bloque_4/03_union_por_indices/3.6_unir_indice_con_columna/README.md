@@ -20,11 +20,6 @@ Mostraremos cómo unir un índice con una columna sin tener que usar `reset_inde
 
 > [!TIP]
 > Esta técnica te ahorra pasos cuando una tabla ya está indexada y la otra todavía conserva la llave como columna.
-
-### Idea visual
-
-![Diagrama de union por izquierda](https://static.pingcap.com/files/2024/05/23092316/left-outer-join.png)
-
 > [!IMPORTANT]
 > El emparejamiento depende de que el índice y la columna representen la misma llave y tengan el mismo tipo.
 

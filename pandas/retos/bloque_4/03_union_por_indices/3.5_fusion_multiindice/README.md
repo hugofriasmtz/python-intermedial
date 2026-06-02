@@ -21,10 +21,6 @@ Tomaremos dos tablas con índice múltiple y las fusionaremos con `merge()` usan
 > [!TIP]
 > Con `MultiIndex`, una unión correcta depende tanto del contenido como del orden de los niveles.
 
-### Idea visual
-
-![Diagrama de union por izquierda](https://static.pingcap.com/files/2024/05/23092316/left-outer-join.png)
-
 > [!IMPORTANT]
 > Si los niveles no coinciden exactamente, pandas no podrá emparejar correctamente las filas.
 

@@ -21,7 +21,6 @@ Tomaremos dos tablas indexadas por la misma llave y las combinaremos con `join()
 > [!TIP]
 > Si ambas tablas ya comparten el índice, `join()` suele ser la forma más directa de combinarlas.
 
-Tip:
 > [!IMPORTANT]
 > Cuando la llave vive en el índice, la alineación de filas importa tanto como el contenido de las columnas.
 
