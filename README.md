@@ -2,7 +2,7 @@
 
 Repositorio de prácticas y apuntes para consolidar Python a nivel intermedio, con foco en NumPy, Matplotlib y Pandas. Contiene retos guiados, ejemplos reutilizables y datos de apoyo para practicar localmente.
 
-![Logo de Python](https://www.python.org/static/community_logos/python-logo.png)
+![Logo de Python](https://1000marcas.net/wp-content/uploads/2020/11/Python-logo.png)
 
 > [!TIP]
 > Usa la `Ruta rápida` para ir directo al módulo que quieras practicar.
