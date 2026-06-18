@@ -3,38 +3,40 @@
 ![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 
 > [!NOTE]
-> Este bloque te enseña a combinar tablas con pandas usando ejemplos practicos de una biblioteca municipal.
+> "La práctica consistente transforma lo difícil en dominio. Cada línea de código es un paso adelante."
 
 ---
 
 ## Mapa del bloque
 
-| Orden | Tema | Que te deja hacer |
+| Orden | Tema | Qué te deja hacer |
 | --- | --- | --- |
-| 01 | [Merge Basico](01_merge_basico/README.md) | Unir dos tablas con `merge()` y `on` |
-| 02 | [Union por Izquierda](02_union_de_tablas/2.1_union_por_izquierda/README.md) | Unir por la izquierda y usar `left_on`, `right_on`, `indicator` y `suffixes` |
-| 03 | [Union por Derecha](02_union_de_tablas/2.2_union_por_derecha/README.md) | Conservar filas de la derecha con `how='right'` |
-| 04 | [Union Externa](02_union_de_tablas/2.3_union_externa/README.md) | Conservar todas las filas de ambas tablas (`how='outer'`) |
+| 01 | [01_merge_basico](01_merge_basico/README.md) | Unir dos tablas con `merge()` y `on` |
+| 02 | [02_union_de_tablas](02_union_de_tablas) | Practicar distintos tipos de `merge()` sobre tablas relacionadas |
+| 03 | [03_union_por_indices](03_union_por_indices/README.md) | Unir DataFrames usando índices simples y MultiIndex |
+| 04 | [04_uniones_filtradas_y_concatenacion](04_uniones_filtradas_y_concatenacion/README.md) | Filtrar coincidencias, validar uniones y reestructurar datos |
 
 ![Diagrama de union tipo merge](https://miro.medium.com/v2/resize:fit:1200/1*9eH1_7VbTZPZd9jBiGIyNA.png)
 
 > [!TIP]
-> Si vienes de Bloque 2 y 3, este bloque te ayudara a combinar informacion separada sin perder claridad.
-> Aqui vas a ver salidas de consola completas para entender como cambia el resultado segun el tipo de union.
+> Si vienes de Bloque 1, 2 y 3, este bloque te ayudará a combinar información separada sin perder claridad.
+> Aquí vas a ver salidas de consola completas para entender cómo cambia el resultado según el tipo de unión.
+> También encontrarás una guía dedicada a unir por índices y otra a filtrar, validar y reestructurar datos.
 > Ejecuta los retos con el entorno virtual del proyecto: `.venv/bin/python`.
 
 ---
 
 ## Checklist rapido
 
-- [ ] Unir dos tablas con una columna en comun.
-- [ ] Entender por que `left join` conserva la tabla principal.
-- [ ] Diferenciar `inner`, `left`, `right` y `outer`.
-- [ ] Usar `left_on` y `right_on` cuando las columnas no tienen el mismo nombre.
-- [ ] Revisar el origen de cada fila con `indicator=True`.
-- [ ] Diferenciar columnas repetidas con `suffixes`.
+- [ ] Unir tablas con `merge()` y `on`.
+- [ ] Usar `left_on`, `right_on`, `indicator` y `suffixes`.
+- [ ] Unir DataFrames con índices simples y MultiIndex.
+- [ ] Hacer semi-joins, anti-joins y concatenación vertical.
+- [ ] Validar la cardinalidad de una unión con `validate`.
+- [ ] Concatenar con `ignore_index` y `keys` cuando sea necesario.
+- [ ] Usar `merge_ordered()` para datos ordenados.
+- [ ] Usar `merge_asof()` para coincidencias cercanas.
+- [ ] Filtrar filas con `query()`.
+- [ ] Reestructurar tablas con `melt()`.
 
-> [!IMPORTANT]
-> En este bloque los ejemplos son auto-contenidos y usan DataFrames creados en el propio README.
-> Los nombres que vas a ver en los ejemplos son Hugo, Karen, Marcos, Felipe y Catalina.
-> Si una combinacion puede duplicar filas, revisa primero si tus claves son unicas.
+---
