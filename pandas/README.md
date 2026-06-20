@@ -12,11 +12,11 @@
 
 ## Tabla de Contenido
 
-1. [Que es pandas](#que-es-pandas)
-2. [Que puedes lograr con pandas](#que-puedes-lograr-con-pandas)
-3. [Donde se usa en el mundo real](#donde-se-usa-en-el-mundo-real)
-4. [Ruta de aprendizaje del modulo](#ruta-de-aprendizaje-del-modulo)
-5. [Como ejecutar los retos](#como-ejecutar-los-retos)
+1. [Que es pandas](#qué-es-pandas)
+2. [Que puedes lograr con pandas](#qué-puedes-lograr-con-pandas)
+3. [Donde se usa en el mundo real](#dónde-se-usa-en-el-mundo-real)
+4. [Ruta de aprendizaje de este repo](#ruta-de-aprendizaje-de-este-repo)
+5. [Como ejecutar los retos](#cómo-ejecutar-los-retos)
 6. [Convencion de nombres de retos](#convencion-de-nombres-de-retos)
 7. [Datos del modulo](#datos-del-modulo)
 8. [Recursos oficiales](#recursos-oficiales)
@@ -24,7 +24,7 @@
 
 ---
 
-## Que es pandas
+## ¿Qué es pandas?
 
 pandas es una libreria de Python para trabajar con datos en formato tabular.
 
@@ -40,7 +40,9 @@ En palabras simples: pandas te ayuda a convertir tablas desordenadas en respuest
 
 ---
 
-## Que puedes lograr con pandas
+## ¿Qué puedes lograr con pandas?
+
+![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
 
 ### Analisis de ventas
 
@@ -62,7 +64,9 @@ En palabras simples: pandas te ayuda a convertir tablas desordenadas en respuest
 
 ---
 
-## Donde se usa en el mundo real
+## ¿Dónde se usa en el mundo real?
+
+![pandas mark](https://pandas.pydata.org/static/img/pandas_mark.svg)
 
 pandas se usa en:
 
@@ -76,14 +80,14 @@ Si tu trabajo involucra tablas o reportes, pandas es una habilidad clave.
 
 ---
 
-## Ruta de aprendizaje del modulo
+## Ruta de aprendizaje de este repo
 
 Este modulo esta pensado para avanzar con estructura clara:
 
-1. `bloque 1`: fundamentos (estructura, seleccion, filtros basicos).
-2. `bloque 2`: operaciones intermedias (groupby, merge, pivot, fechas).
-3. `bloque 3`: estadisticas de Series y conteo (resumen numerico, acumulados, duplicados y frecuencias).
-4. `bloque 4`: union de datos (merge basico y tipos de union como left, right y outer).
+1. `retos/bloque_1`: fundamentos (estructura, seleccion, filtros basicos).
+2. `retos/bloque_2`: operaciones intermedias (groupby, merge, pivot, fechas).
+3. `retos/bloque_3`: estadisticas de Series y conteo (resumen numerico, duplicados y frecuencias).
+4. `retos/bloque_4`: uniones con columnas e indices (merge basico, left/right/outer, self-merge y MultiIndex).
 
 Recomendacion de uso:
 
@@ -93,7 +97,7 @@ Recomendacion de uso:
 
 ---
 
-## Como ejecutar los retos
+## ¿Cómo ejecutar los retos?
 
 Desde la raiz del repo:
 
@@ -104,7 +108,7 @@ pip install -r pandas/requirements.txt
 python pandas/retos/bloque_1/01_dataframe_basico.py
 ```
 
-Puedes cambiar el archivo final por cualquier otro reto del bloque 1, 2 o 3.
+Puedes cambiar el archivo final por cualquier otro reto del bloque 1, 2, 3 o 4.
 
 ---
 
@@ -144,10 +148,10 @@ Asi evitas duplicar datasets en varias carpetas.
 
 Imagenes usadas por referencia visual de la libreria pandas:
 
-- [Logo principal](https://pandas.pydata.org/static/img/pandas.svg)
-- [Logo principal (fondo oscuro)](https://pandas.pydata.org/static/img/pandas_white.svg)
-- [Logo secundario](https://pandas.pydata.org/static/img/pandas_secondary.svg)
-- [Marca (icono)](https://pandas.pydata.org/static/img/pandas_mark.svg)
+- Logo principal: `https://pandas.pydata.org/static/img/pandas.svg`
+- Logo principal (fondo oscuro): `https://pandas.pydata.org/static/img/pandas_white.svg`
+- Logo secundario: `https://pandas.pydata.org/static/img/pandas_secondary.svg`
+- Marca (icono): `https://pandas.pydata.org/static/img/pandas_mark.svg`
 
 Fuente de marca y lineamientos:
 
@@ -155,7 +159,4 @@ Fuente de marca y lineamientos:
 
 ---
 
-![pandas secondary logo](https://pandas.pydata.org/static/img/pandas_secondary.svg)
-
->[!WARNING]
->**Estado:** El Repositorio esta en desarrollo y se iran agregando retos, mejoras visuales y material de apoyo de forma continua.
+**Estado:** En construccion
